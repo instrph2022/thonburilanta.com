@@ -9,8 +9,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        cream: "var(--cream)",
+        "warm-white": "var(--warm-white)",
+        sand: "var(--sand)",
+        "teal-brand": "var(--teal)",
+        "teal-mid": "var(--teal-mid)",
+        "teal-light": "var(--teal-light)",
+        "teal-dark": "var(--teal-dark)",
+        ocean: "var(--ocean)",
+        "ocean-light": "var(--ocean-light)",
+        amber: "var(--amber)",
+        "amber-light": "var(--amber-light)",
+        "red-soft": "var(--red-soft)",
+        dark: "var(--dark)",
+        mid: "var(--mid)",
+        muted: "var(--muted)",
       },
     },
   },
