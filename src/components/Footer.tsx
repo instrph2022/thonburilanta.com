@@ -93,8 +93,8 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-teal-brand shrink-0" />
-                <a href="tel:075821999" className="text-white/70 hover:text-white decoration-transparent">
-                  075-821-999
+                <a href="tel:+66815697890" className="text-white/70 hover:text-white decoration-transparent">
+                  081-569-7890
                 </a>
               </div>
               <div className="flex items-center gap-2">
@@ -118,7 +118,7 @@ export default function Footer() {
 
       {/* Sticky Mobile Emergency Button */}
       <a
-        href="tel:075821999"
+        href="tel:+66815697890"
         className="fixed bottom-5 right-5 z-[300] bg-red-soft text-white rounded-full py-3 px-5 flex md:hidden items-center gap-2 text-[13px] font-semibold shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all select-none animate-float2 decoration-transparent"
       >
         <span className="w-2 h-2 rounded-full bg-white animate-blink" />

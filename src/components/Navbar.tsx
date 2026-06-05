@@ -67,7 +67,7 @@ export default function Navbar() {
 
           {/* Emergency 24/7 button */}
           <a
-            href="tel:075821999"
+            href="tel:+66815697890"
             className="flex items-center gap-1.5 bg-red-soft text-white border-0 px-3.5 py-2 rounded-lg text-[12px] font-semibold cursor-pointer relative overflow-hidden group select-none animate-shimmer-btn decoration-transparent hover:opacity-90"
           >
             <div className="absolute inset-0 bg-white/10 -translate-x-full animate-shimmer" />
@@ -97,7 +97,7 @@ export default function Navbar() {
 
           {/* Emergency button (mobile) */}
           <a
-            href="tel:075821999"
+            href="tel:+66815697890"
             className="bg-red-soft text-white p-2 rounded-lg"
           >
             <PhoneCall className="w-4 h-4 animate-bounce" />

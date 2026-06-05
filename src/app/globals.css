@@ -6,14 +6,14 @@
   --cream: #F9F6F0;
   --warm-white: #FDFCF9;
   --sand: #EDE8DF;
-  --teal: #1A8C68;
-  --teal-mid: #2AAF84;
-  --teal-light: #D6F0E6;
-  --teal-dark: #0D5C45;
-  --ocean: #1B4E6B;
-  --ocean-light: #D4E8F5;
-  --amber: #D4832A;
-  --amber-light: #FBF0E0;
+  --teal: #0065B3; /* Corporate Blue from logo */
+  --teal-mid: #007FD6; /* Medium Blue */
+  --teal-light: #E5F3FF; /* Soft Light Blue background */
+  --teal-dark: #004780; /* Deep Blue for headings/text */
+  --ocean: #003561; /* Deeper dark blue background */
+  --ocean-light: #D9EEFF; /* Bright sky blue backdrop */
+  --amber: #FAB915; /* Golden Yellow from logo cross */
+  --amber-light: #FFF8E5; /* Soft Gold background */
   --red-soft: #C94040;
   --dark: #1C1C1A;
   --mid: #555550;

@@ -1,13 +1,33 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 import InquiryForm from "@/components/InquiryForm";
-import { Shield, Compass } from "lucide-react";
+import { Shield, Compass, Search } from "lucide-react";
+
+const INSURANCES = [
+  "Allianz", "Allianz Partners", "AXA", "AXA Assistance", "AXA PPP Healthcare", "Bupa", "Cigna", 
+  "Generali", "Gouda", "Hanse MerKur", "Falck", "Folksam", "Gjensidige", "Luma", "Blue Cross Blue Shield", 
+  "Chubb", "Aviva", "Bangkok Insurance", "Bangkok Life", "Muang Thai Life (MTL)", "LMG Insurance", 
+  "Liberty Insurance", "DAN (Divers Alert Network)", "Australasian Assistance", "Barclays", 
+  "Barmenia Versicherungen", "Best Service Group", "Can Assistance", "CCS Insurance Services", 
+  "CEGA", "Celta Assistance", "Columbus Direct", "Compass", "Coris", "Cover for you", "Cover More", 
+  "Debeka", "Deutsche Assistance", "Direct Line Group", "Dkv", "Dynamiq", "Ema Global", 
+  "Eurocross Assistance", "Europ Assistance", "First Assistance", "Harel", "Healix", "Henner Assurances", 
+  "HTH Worldwide", "Huk Coburg", "IATI", "If Insurance", "Mima Groupe", "InsureandGo", "Intana Global", 
+  "Inter Mutuelles", "Inter Partner", "ICS", "Localtapiola", "Malteser", "Manulife", "Medic Air", 
+  "MetLife", "Mondial Assistance", "Morgan Price", "Mutas", "Nationwide", "NextCare", "Nib", 
+  "Now Health International", "On Call International"
+];
 
 export default function Home() {
   const { t } = useLanguage();
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const filteredInsurances = searchQuery.trim() === ""
+    ? ["Allianz", "AXA", "Europ Assistance", "DAN", "Bupa", "Cigna", "Generali", "Folksam"]
+    : INSURANCES.filter(ins => ins.toLowerCase().includes(searchQuery.toLowerCase()));
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -15,7 +35,7 @@ export default function Home() {
     "name": "Thonburi Lanta Hospital",
     "alternateName": "โรงพยาบาลธนบุรีลันตา",
     "url": "https://thonburilanta.com",
-    "telephone": "+66-75-821-999",
+    "telephone": "+66-81-569-7890",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Koh Lanta",
@@ -82,7 +102,7 @@ export default function Home() {
                 {t("heroErLabel")}
               </div>
               <div className="font-serif text-2xl font-semibold text-dark tracking-tight">
-                <a href="tel:075821999" className="hover:underline decoration-transparent">
+                <a href="tel:+66815697890" className="hover:underline decoration-transparent">
                   {t("heroErPhone")}
                 </a>
               </div>
@@ -483,27 +503,40 @@ export default function Home() {
             </Link>
           </div>
 
+          <div className="mb-8 max-w-md relative">
+            <span className="absolute left-4 top-3.5 text-white/50">
+              <Search className="w-5 h-5" />
+            </span>
+            <input
+              type="text"
+              placeholder="Type to search your travel insurance provider..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full bg-white/15 border border-white/20 rounded-xl py-3 pl-12 pr-10 text-white placeholder-white/40 focus:outline-none focus:border-white/50 text-[14.5px] shadow-inner"
+            />
+            {searchQuery && (
+              <button
+                onClick={() => setSearchQuery("")}
+                className="absolute right-4 top-3.5 text-white/50 hover:text-white"
+              >
+                ✕
+              </button>
+            )}
+          </div>
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-            <div className="bg-white/10 border border-white/15 rounded-xl p-5 text-center hover:bg-white/15 transition-colors">
-              <span className="text-xl mb-2 block">🛡️</span>
-              <div className="text-[13.5px] font-bold text-white mb-0.5">Allianz</div>
-              <div className="text-[10px] text-white/50">Global Partner</div>
-            </div>
-            <div className="bg-white/10 border border-white/15 rounded-xl p-5 text-center hover:bg-white/15 transition-colors">
-              <span className="text-xl mb-2 block">🛡️</span>
-              <div className="text-[13.5px] font-bold text-white mb-0.5">AXA</div>
-              <div className="text-[10px] text-white/50">Europe / Global</div>
-            </div>
-            <div className="bg-white/10 border border-white/15 rounded-xl p-5 text-center hover:bg-white/15 transition-colors">
-              <span className="text-xl mb-2 block">🛡️</span>
-              <div className="text-[13.5px] font-bold text-white mb-0.5">Europ Assistance</div>
-              <div className="text-[10px] text-white/50">Europe Direct</div>
-            </div>
-            <div className="bg-white/10 border border-white/15 rounded-xl p-5 text-center hover:bg-white/15 transition-colors">
-              <span className="text-xl mb-2 block">🛡️</span>
-              <div className="text-[13.5px] font-bold text-white mb-0.5">DAN</div>
-              <div className="text-[10px] text-white/50">Dive Insurance</div>
-            </div>
+            {filteredInsurances.slice(0, 8).map((ins) => (
+              <div key={ins} className="bg-white/10 border border-white/15 rounded-xl p-5 text-center hover:bg-white/15 transition-colors duration-200">
+                <span className="text-xl mb-2 block">🛡️</span>
+                <div className="text-[13.5px] font-bold text-white mb-0.5">{ins}</div>
+                <div className="text-[10px] text-white/50">Accepted Direct Billing</div>
+              </div>
+            ))}
+            {filteredInsurances.length === 0 && (
+              <div className="col-span-2 md:col-span-4 text-center py-8 text-white/60 text-[14px]">
+                No matching insurer found. Contact us to verify. We work with most international travel policies.
+              </div>
+            )}
           </div>
 
           <div className="bg-white/5 border border-white/10 rounded-xl p-4.5 text-[12.5px] text-white/70 leading-relaxed flex items-start gap-3">
@@ -740,9 +773,9 @@ export default function Home() {
               <div className="flex gap-4 border-b border-border pb-6">
                 <div className="w-10 h-10 rounded-xl bg-teal-light text-teal-dark flex items-center justify-center text-lg shrink-0">📞</div>
                 <div>
-                  <div className="text-[11px] font-semibold text-muted tracking-wider mb-1">{t("locPhoneLabel")}</div>
+                  <div className="text-[11px] font-semibold text-muted tracking-wider mb-1">{t("locAddressLabel")}</div>
                   <div className="text-[13.5px] leading-relaxed text-dark font-medium whitespace-pre-line font-serif font-bold">
-                    <a href="tel:075821999" className="hover:underline">{t("locPhoneVal")}</a>
+                    <a href="tel:+66815697890" className="hover:underline">{t("locPhoneVal")}</a>
                   </div>
                 </div>
               </div>
@@ -797,7 +830,9 @@ export default function Home() {
                 <div className="w-10 h-10 rounded-lg bg-teal-light text-teal-dark flex items-center justify-center text-lg shrink-0 mt-0.5">📞</div>
                 <div>
                   <div className="text-[10.5px] font-semibold text-muted tracking-wider mb-1">CALL US 24/7</div>
-                  <div className="text-[14px] text-dark font-serif font-bold">075-821-999</div>
+                  <div className="text-[14px] text-dark font-serif font-bold">
+                    <a href="tel:+66815697890" className="hover:underline">081-569-7890</a>
+                  </div>
                 </div>
               </div>
               <div className="flex items-start gap-4 border-b border-border py-4">

@@ -25,12 +25,12 @@ const translations = {
     // Hero
     heroBadgeEnglish: "English-speaking doctors",
     heroBadgeInsurance: "International insurance accepted",
-    heroBadgeFamily: "Family-friendly",
+    heroBadgeFamily: "AACI Accredited Clinic",
     heroEyebrow: "Koh Lanta's First Full Hospital",
     heroTitleHtml: "Your family's<br/><em>safe harbour</em><br/>on the island",
     heroSub: "A full-service 36-bed hospital on Koh Lanta — with English-speaking doctors, 24-hour emergency care, and support for international insurance. So your family can explore freely.",
     heroErLabel: "EMERGENCY · 24 HOURS",
-    heroErPhone: "075-821-999", // placeholder phone
+    heroErPhone: "081-569-7890", // actual phone number
     heroErNote: "Walk in anytime · No appointment needed",
     heroBtnPackages: "View Packages →",
     heroBtnDoctors: "Meet our doctors",
@@ -43,7 +43,7 @@ const translations = {
     tbEnglish: "Doctors speak English",
     tbInsurance: "Direct insurance billing",
     tbEmergency: "24/7 Emergency room",
-    tbPaediatric: "Paediatric care available",
+    tbPaediatric: "AACI International Standard",
     tbGroup: "Thonburi Healthcare Group",
 
     // Families
@@ -134,7 +134,7 @@ const translations = {
     checkTitleHtml: "Smart family<br/>travel checklist",
     checkDesc: "A few simple steps before you arrive make all the difference — especially with young children.",
     checkItem1Title: "Save our emergency number",
-    checkItem1Desc: "+66 75 821 999 — add it to your phone before you land on Koh Lanta.",
+    checkItem1Desc: "+66 81 569 7890 — add it to your phone before you land on Koh Lanta.",
     checkItem2Title: "Bring your insurance documents",
     checkItem2Desc: "Policy number, insurer contact, and any pre-existing condition notes.",
     checkItem3Title: "Check children's vaccination records",
@@ -155,7 +155,7 @@ const translations = {
     locHoursLabel: "HOURS",
     locHoursVal: "OPD: 08:00 – 20:00\nEmergency: 24 hours, 7 days",
     locPhoneLabel: "PHONE",
-    locPhoneVal: "+66 75 821 999\nInternational calls welcome",
+    locPhoneVal: "+66 81 569 7890\nInternational calls welcome",
     locSocialLabel: "LINE / WHATSAPP",
     locSocialVal: "@thonburilanta\nReply within 2 hours",
     locMapPlaceholder: "Google Maps embed here",
@@ -210,12 +210,12 @@ const translations = {
     // Hero
     heroBadgeEnglish: "ทีมแพทย์สื่อสารภาษาอังกฤษได้ดี",
     heroBadgeInsurance: "ยินดีรับประกันสุขภาพต่างประเทศ",
-    heroBadgeFamily: "ดูแลอย่างใกล้ชิดเสมือนครอบครัว",
+    heroBadgeFamily: "ผ่านการรับรองมาตรฐานสากล AACI",
     heroEyebrow: "โรงพยาบาลเต็มรูปแบบแห่งแรกบนเกาะลันตา",
     heroTitleHtml: "ดูแลสุขภาพของ<br/><em>คนที่คุณรัก</em><br/>ในทุกการเดินทาง",
     heroSub: "โรงพยาบาลขนาด 36 เตียงที่มีบริการครบครันบนเกาะลันตา พร้อมทีมแพทย์ดูแลรักษาตลอด 24 ชั่วโมง และระบบประสานงานประกันภัยต่างประเทศ ให้คุณท่องเที่ยวได้อย่างอุ่นใจ",
     heroErLabel: "แผนกฉุกเฉิน · ตลอด 24 ชั่วโมง",
-    heroErPhone: "075-821-999",
+    heroErPhone: "081-569-7890",
     heroErNote: "สามารถเข้ารับบริการได้ทันทีโดยไม่ต้องนัดหมาย",
     heroBtnPackages: "ดูแพ็กเกจสุขภาพ →",
     heroBtnDoctors: "ทำความรู้จักทีมแพทย์",
@@ -228,7 +228,7 @@ const translations = {
     tbEnglish: "ทีมแพทย์ดูแลและอธิบายเป็นภาษาอังกฤษ",
     tbInsurance: "บริการเคลมตรงกับบริษัทประกัน",
     tbEmergency: "ห้องฉุกเฉินบริการตลอด 24 ชั่วโมง",
-    tbPaediatric: "มีแพทย์เฉพาะทางกุมารเวชบริการ",
+    tbPaediatric: "มาตรฐานสากล AACI",
     tbGroup: "เครือธนบุรี เฮลท์แคร์ กรุ๊ป (THG)",
 
     // Families
@@ -319,7 +319,7 @@ const translations = {
     checkTitleHtml: "เช็คลิสต์เตรียมความพร้อม<br/>เพื่อความปลอดภัยของครอบครัว",
     checkDesc: "การเตรียมตัวง่ายๆ เพียงไม่กี่ขั้นตอน จะช่วยให้ทริปครอบครัวบนเกาะลันตาราบรื่นและอุ่นใจสูงสุด",
     checkItem1Title: "บันทึกเบอร์โทรฉุกเฉินของเรา",
-    checkItem1Desc: "075-821-999 — บันทึกใส่โทรศัพท์ของคุณก่อนเดินทางมาถึงเกาะลันตา",
+    checkItem1Desc: "081-569-7890 — บันทึกใส่โทรศัพท์ของคุณก่อนเดินทางมาถึงเกาะลันตา",
     checkItem2Title: "เตรียมเอกสารประกันภัยการเดินทาง",
     checkItem2Desc: "เลขกรมธรรม์ ช่องทางติดต่อ และเอกสารประวัติการรักษาหากมีโรคประจำตัว",
     checkItem3Title: "ตรวจสอบประวัติวัคซีนของเด็กๆ",
@@ -340,7 +340,7 @@ const translations = {
     locHoursLabel: "เวลาเปิดทำการ",
     locHoursVal: "ตรวจผู้ป่วยนอก (OPD): 08:00 – 20:00\nฉุกเฉิน (ER): บริการ 24 ชั่วโมง ทุกวัน",
     locPhoneLabel: "เบอร์โทรติดต่อ",
-    locPhoneVal: "075-821-999\n(ยินดีรับสายจากต่างประเทศ)",
+    locPhoneVal: "081-569-7890\n(ยินดีรับสายจากต่างประเทศ)",
     locSocialLabel: "ไลน์ / วอตส์แอปป์",
     locSocialVal: "@thonburilanta\nตอบกลับภายใน 2 ชั่วโมง",
     locMapPlaceholder: "แผนที่ Google Maps แสดงบนหน้าเว็บ",
