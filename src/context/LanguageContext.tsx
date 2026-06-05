@@ -188,6 +188,11 @@ const translations = {
     inqRightTitleHtml: "We're here<br/>whenever<br/>you need us",
     inqRightSub: "Whether you have a medical question before your trip, or you need care right now — our English-speaking team is ready.",
 
+    // Reviews
+    revTitle: "Real Google Reviews from Travelers",
+    revSub: "Real Patients. Real Stories. Over 60 reviews with a 5.0 rating on Google.",
+    revWriteBtn: "Write a review on Google",
+
     // Footer
     footBrandDesc: "A member of Thonburi Healthcare Group (THG), delivering standard clinical care for local residents and international visitors on Koh Lanta.",
     footLinksDoc: "Doctors & Team",
@@ -372,6 +377,11 @@ const translations = {
     inqRightEyebrow: "ช่องทางการติดต่อ",
     inqRightTitleHtml: "เราพร้อมดูแลคุณ<br/>ในทุกช่วงเวลา<br/>ที่คุณต้องการ",
     inqRightSub: "ไม่ว่าคุณจะมีคำปรึกษาล่วงหน้าก่อนเดินทาง หรือต้องการการรักษาเร่งด่วนในขณะนี้ ทีมงานโรงพยาบาลธนบุรีลันตาพร้อมช่วยเหลือเสมอ",
+
+    // Reviews
+    revTitle: "ความคิดเห็นจากผู้รับบริการจริงบน Google",
+    revSub: "คะแนนเฉลี่ย 5.0 ดาว จากกว่า 60 รีวิว โดยนักท่องเที่ยวและผู้รับบริการจริง",
+    revWriteBtn: "เขียนรีวิวบน Google",
 
     // Footer
     footBrandDesc: "โรงพยาบาลในเครือธนบุรี เฮลท์แคร์ กรุ๊ป (THG) มุ่งมั่นที่จะมอบมาตรฐานการดูแลรักษาระดับสากลให้กับผู้อยู่อาศัยในเกาะลันตาและนักท่องเที่ยวทั่วโลก",

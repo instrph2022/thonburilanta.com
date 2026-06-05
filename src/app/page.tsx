@@ -21,6 +21,51 @@ const INSURANCES = [
   "Now Health International", "On Call International"
 ];
 
+const REVIEWS = [
+  {
+    name: "Laura Moggs",
+    rating: 5,
+    date: "2025-02-25",
+    text: "Probably the best health care experience of my life. Seen very quickly and given exceptional care. The clinic manager Joah was on hand at all times and sat with me whilst my medication was being prepared as I was alone. Couldn’t fault my experience. The loveliest people work here!",
+    avatar: "L"
+  },
+  {
+    name: "Vanessa Fernandes",
+    rating: 5,
+    date: "2025-05-20",
+    text: "Excellent service. I fainted at the restaurant next door and they immediately called the clinic. They arrived instantly, brought me in and did tests. The nurse and doctor were incredibly friendly and explained everything clearly in English. Super smooth insurance coordination!",
+    avatar: "V"
+  },
+  {
+    name: "Madeleine Davis",
+    rating: 5,
+    date: "2025-05-06",
+    text: "Really lovely and welcoming team. I was seen and given treatment incredibly quickly and efficiently. Thank you for making what could be quite a daunting experience very positive!",
+    avatar: "M"
+  },
+  {
+    name: "Rob A.",
+    rating: 5,
+    date: "2025-04-16",
+    text: "Excellent service provided. Good communication and very helpful and friendly staff. Needed wound cleaning and dressing daily and they sorted this liaising with my travel insurer.",
+    avatar: "R"
+  },
+  {
+    name: "Sunesh Smith",
+    rating: 5,
+    date: "2025-04-02",
+    text: "I suffered very bad food poisoning and spent an evening in the clinic. I was very well looked after by the staff and seen to by the doctor quickly. They even helped contact my insurance to settle the bill on the night. Highly recommend!",
+    avatar: "S"
+  },
+  {
+    name: "Amelia Kirby",
+    rating: 5,
+    date: "2025-04-02",
+    text: "Kind attentive staff, little to no wait. Clean and professional facility. I was treated as soon as I arrived and they even drove me back to my hotel. They delivered medicine to my hotel later that day. Highly recommend.",
+    avatar: "A"
+  }
+];
+
 export default function Home() {
   const { t } = useLanguage();
   const [searchQuery, setSearchQuery] = useState("");
@@ -804,6 +849,78 @@ export default function Home() {
             >
               Open in Google Maps
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* GOOGLE REVIEWS SECTION */}
+      <section className="py-20 px-6 sm:px-12 lg:px-20 bg-warm-white border-t border-border">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-[30%_70%] gap-12 items-center">
+            <div>
+              <div className="text-[10.5px] font-semibold uppercase tracking-[2.5px] text-teal-brand mb-3">
+                Reviews
+              </div>
+              <h2 className="font-serif text-3xl sm:text-4xl text-dark tracking-tight mb-4">
+                {t("revTitle")}
+              </h2>
+              <p className="text-[14px] text-mid leading-relaxed mb-6">
+                {t("revSub")}
+              </p>
+              
+              {/* Google Big Rating Badge */}
+              <div className="bg-cream rounded-2xl p-5 border border-border flex flex-col items-center text-center shadow-sm max-w-[240px]">
+                <span className="text-[13px] font-bold text-dark mb-1">Google Rating</span>
+                <span className="text-4xl font-serif font-black text-teal-brand mb-1">5.0</span>
+                <div className="flex gap-1 mb-2">
+                  <span className="text-amber text-lg">★</span>
+                  <span className="text-amber text-lg">★</span>
+                  <span className="text-amber text-lg">★</span>
+                  <span className="text-amber text-lg">★</span>
+                  <span className="text-amber text-lg">★</span>
+                </div>
+                <span className="text-[11px] text-muted mb-4">Based on 60+ travelers&apos; reviews</span>
+                <a
+                  href="https://search.google.com/local/writereview?placeid=ChIJTX2VL3jBUTARtzm-qlggWDg"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-teal-brand text-white border-0 py-2 px-4 rounded-xl text-[12px] font-semibold hover:bg-teal-dark transition-all cursor-pointer shadow-md decoration-transparent"
+                >
+                  {t("revWriteBtn")}
+                </a>
+              </div>
+            </div>
+
+            {/* Scrollable horizontal review list */}
+            <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-teal-brand/20">
+              {REVIEWS.map((rev) => (
+                <div key={rev.name} className="min-w-[280px] sm:min-w-[340px] bg-cream rounded-2xl p-6 border border-border flex flex-col justify-between hover:scale-[1.01] transition-transform shadow-sm">
+                  <div>
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-full bg-teal-brand/10 text-teal-brand flex items-center justify-center font-bold text-[14px]">
+                          {rev.avatar}
+                        </div>
+                        <div>
+                          <h4 className="text-[13.5px] font-bold text-dark">{rev.name}</h4>
+                          <span className="text-[10px] text-muted">{rev.date}</span>
+                        </div>
+                      </div>
+                      <div className="flex gap-0.5 text-amber text-[13px]">
+                        {"★".repeat(rev.rating)}
+                      </div>
+                    </div>
+                    <p className="text-[12.5px] leading-relaxed text-mid italic">
+                      &ldquo;{rev.text}&rdquo;
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-1.5 mt-5 text-[10px] text-teal-brand font-semibold">
+                    <span className="w-1.5 h-1.5 rounded-full bg-teal-brand animate-blink" />
+                    <span>Verified Google Review</span>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
