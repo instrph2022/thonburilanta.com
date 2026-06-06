@@ -8,6 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["var(--font-inter)", "var(--font-sarabun)", "sans-serif"],
+        serif: ["var(--font-lora)", "var(--font-prompt)", "serif"],
+      },
       colors: {
         cream: "var(--cream)",
         "warm-white": "var(--warm-white)",

@@ -5,11 +5,16 @@ create table inquiries (
   name text not null,
   phone text,
   email text,
-  channel text default 'web_form', -- 'web_form' | 'facebook' | 'line' | 'walk_in' | 'phone'
+  channel text default 'web_form', -- 'web_form' | 'facebook' | 'line' | 'walk_in' | 'phone' | 'whatsapp'
   service_interest text not null, -- 'general' | 'dive_package' | 'health_check' | 'emergency' | 'insurance' | 'resort_partnership'
   message text,
   language text default 'th', -- 'th' | 'en'
-  status text default 'new' -- 'new' | 'contacted' | 'booked' | 'closed'
+  status text default 'new', -- 'new' | 'contacted' | 'booked' | 'closed'
+  responded_at timestamptz default null,
+  insurance_info text default null,
+  nationality text default null,
+  length_of_stay text default null,
+  current_stay text default null
 );
 
 -- Enable Row Level Security (RLS)

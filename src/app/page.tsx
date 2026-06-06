@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 import InquiryForm from "@/components/InquiryForm";
-import { Shield, Compass, Search } from "lucide-react";
+import { Shield, Compass, Search, Heart, Phone, Clock, MapPin, Activity, Award, Users, Check, AlertCircle } from "lucide-react";
 
 const INSURANCES = [
   "Allianz", "Allianz Partners", "AXA", "AXA Assistance", "AXA PPP Healthcare", "Bupa", "Cigna", 
@@ -195,127 +195,113 @@ export default function Home() {
         </div>
 
         {/* HERO RIGHT */}
-        <div className="bg-cream relative flex flex-col justify-center items-center py-16 px-6 lg:px-12 border-l border-border">
+        <div className="bg-cream relative flex flex-col justify-center items-center py-16 px-6 lg:px-12 border-l border-border overflow-hidden">
           {/* Abstract tropical gradient bg */}
-          <div className="absolute inset-0 bg-gradient-to-br from-teal-light/45 via-sand/35 to-ocean-light/45 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-br from-teal-light/40 via-sand/20 to-ocean-light/30 pointer-events-none" />
 
-          <div className="relative z-10 w-full max-w-[460px] flex flex-col items-center gap-6">
-            {/* SVG doctor illustration */}
-            <svg width="100%" viewBox="0 0 400 340" xmlns="http://www.w3.org/2000/svg" className="max-w-[420px] drop-shadow-md">
-              <rect x="0" y="180" width="400" height="160" rx="0" fill="#C8EDD9" opacity="0.4"/>
-              <rect x="28" y="120" width="7" height="100" rx="3" fill="#5C8A5A"/>
-              <ellipse cx="31" cy="110" rx="28" ry="18" fill="#4A7A48" opacity="0.85"/>
-              <ellipse cx="14" cy="118" rx="18" ry="12" fill="#5C8A5A" opacity="0.8"/>
-              <ellipse cx="50" cy="115" rx="18" ry="11" fill="#5C8A5A" opacity="0.8"/>
-              <rect x="365" y="130" width="7" height="90" rx="3" fill="#5C8A5A"/>
-              <ellipse cx="368" cy="120" rx="26" ry="16" fill="#4A7A48" opacity="0.85"/>
-              <ellipse cx="352" cy="127" rx="17" ry="11" fill="#5C8A5A" opacity="0.75"/>
-              <ellipse cx="385" cy="124" rx="17" ry="10" fill="#5C8A5A" opacity="0.75"/>
-              <rect x="140" y="90" width="120" height="130" rx="10" fill="white" stroke="#C8EDD9" stroke-width="1.5"/>
-              <rect x="158" y="108" width="24" height="20" rx="4" fill="#D4E8F5"/>
-              <rect x="194" y="108" width="24" height="20" rx="4" fill="#D4E8F5"/>
-              <rect x="218" y="108" width="24" height="20" rx="4" fill="#D4E8F5"/>
-              <rect x="158" y="138" width="24" height="20" rx="4" fill="#D4E8F5"/>
-              <rect x="194" y="138" width="24" height="20" rx="4" fill="#D4E8F5"/>
-              <rect x="183" y="178" width="34" height="42" rx="5" fill="#D6F0E6"/>
-              <rect x="192" y="100" width="16" height="5" rx="2" fill="#1A8C68"/>
-              <rect x="197" y="95" width="5" height="14" rx="2" fill="#1A8C68"/>
-              <rect x="152" y="163" width="96" height="14" rx="4" fill="#1A8C68" opacity="0.12"/>
-              <text x="200" y="173" text-anchor="middle" font-size="7" fill="#0D5C45" font-family="sans-serif" font-weight="500">THONBURI LANTA</text>
-              <rect x="0" y="220" width="400" height="6" rx="3" fill="#9FD4B8" opacity="0.5"/>
-              <rect x="183" y="220" width="34" height="18" rx="2" fill="#E8E0D0" opacity="0.8"/>
-              <rect x="190" y="155" width="22" height="30" rx="4" fill="white" stroke="#C8EDD9" stroke-width="1"/>
-              <path d="M196 162 Q200 168 204 162" fill="none" stroke="#1A8C68" stroke-width="1.5" stroke-linecap="round"/>
-              <circle cx="200" cy="148" r="10" fill="#F5C9A0"/>
-              <path d="M191 145 Q200 138 209 145" fill="#3D2B1F" stroke="none"/>
-              <path d="M196 151 Q200 154 204 151" fill="none" stroke="#C07048" stroke-width="1" stroke-linecap="round"/>
-              <rect x="212" y="160" width="10" height="18" rx="4" fill="white" stroke="#C8EDD9" stroke-width="1"/>
-              <rect x="213" y="163" width="8" height="12" rx="2" fill="#D6F0E6"/>
-              <rect x="214" y="165" width="6" height="1.5" rx="1" fill="#1A8C68" opacity="0.5"/>
-              <rect x="214" y="168" width="6" height="1.5" rx="1" fill="#1A8C68" opacity="0.5"/>
-              <rect x="214" y="171" width="4" height="1.5" rx="1" fill="#1A8C68" opacity="0.5"/>
-              <circle cx="248" cy="160" r="9" fill="#E8B090"/>
-              <path d="M240 157 Q248 151 256 157" fill="#4A3020" stroke="none"/>
-              <rect x="240" y="168" width="16" height="26" rx="4" fill="#5B8DD9"/>
-              <circle cx="266" cy="162" r="8" fill="#F0C0A0"/>
-              <path d="M259 159 Q266 154 273 159" fill="#7A5030" stroke="none"/>
-              <rect x="259" y="169" width="14" height="24" rx="4" fill="#E8829A"/>
-              <circle cx="257" cy="176" r="6" fill="#F5C9A0"/>
-              <rect x="252" y="181" width="10" height="16" rx="3" fill="#FFD166"/>
-              <line x1="262" y1="184" x2="267" y2="179" stroke="#F5C9A0" stroke-width="3" stroke-linecap="round"/>
-              <circle cx="228" cy="145" r="10" fill="#FFF0F3"/>
-              <path d="M224 144 Q224 141 228 144 Q232 141 232 144 Q232 148 228 151 Q224 148 224 144Z" fill="#E8829A"/>
-              <circle cx="355" cy="55" r="20" fill="#FFF3CC" opacity="0.9"/>
-              <circle cx="355" cy="55" r="14" fill="#FFD166" opacity="0.9"/>
-              <line x1="355" y1="26" x2="355" y2="32" stroke="#FFD166" stroke-width="2" stroke-linecap="round"/>
-              <line x1="355" y1="78" x2="355" y2="84" stroke="#FFD166" stroke-width="2" stroke-linecap="round"/>
-              <line x1="326" y1="55" x2="332" y2="55" stroke="#FFD166" stroke-width="2" stroke-linecap="round"/>
-              <line x1="378" y1="55" x2="384" y2="55" stroke="#FFD166" stroke-width="2" stroke-linecap="round"/>
-              <ellipse cx="60" cy="234" rx="50" ry="8" fill="#7EC8E3" opacity="0.4"/>
-              <ellipse cx="340" cy="238" rx="45" ry="7" fill="#7EC8E3" opacity="0.35"/>
-              <path d="M44 228 Q60 218 76 228Z" fill="#E8829A" opacity="0.7"/>
-            </svg>
+          {/* Decorative geometric blur circles */}
+          <div className="absolute top-1/4 right-1/4 w-72 h-72 rounded-full bg-teal-mid/5 blur-3xl pointer-events-none" />
+          <div className="absolute bottom-1/4 left-1/4 w-80 h-80 rounded-full bg-amber/5 blur-3xl pointer-events-none" />
 
-            {/* 3 Trust info boxes below SVG illustration */}
-            <div className="flex flex-col gap-3 w-full">
-              <div className="flex gap-3">
-                <div className="flex-1 bg-white rounded-xl p-3 flex items-center gap-3 shadow-sm hover:scale-[1.02] transition-transform">
-                  <span className="text-xl">👶</span>
+          <div className="relative z-10 w-full max-w-[440px] flex flex-col gap-6">
+            
+            {/* Primary Admissions Gate Card */}
+            <div className="bg-white/85 backdrop-blur-md rounded-2xl p-6 border border-white/60 shadow-xl shadow-teal-dark/5 hover:scale-[1.01] transition-transform duration-300">
+              <div className="flex items-center justify-between border-b border-border pb-4 mb-4">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-8 h-8 rounded-lg bg-teal-brand flex items-center justify-center p-1.5 shadow-md shadow-teal-brand/10">
+                    <Activity className="w-4 h-4 text-amber" />
+                  </div>
                   <div>
-                    <div className="text-[11.5px] font-semibold text-dark leading-snug">Paediatric care</div>
-                    <div className="text-[9.5px] text-muted mt-0.5">Children welcome</div>
+                    <h3 className="text-[12.5px] font-bold text-dark tracking-tight leading-tight">CLINICAL ADMISSION</h3>
+                    <p className="text-[9px] font-medium text-muted tracking-wider">THONBURI HEALTHCARE GROUP</p>
                   </div>
                 </div>
-                <div className="flex-1 bg-white rounded-xl p-3 flex items-center gap-3 shadow-sm hover:scale-[1.02] transition-transform">
-                  <span className="text-xl">💬</span>
-                  <div>
-                    <div className="text-[11.5px] font-semibold text-dark leading-snug">English spoken</div>
-                    <div className="text-[9.5px] text-muted mt-0.5">All clinical staff</div>
-                  </div>
+                <div className="bg-teal-light border border-teal-brand/10 text-teal-dark px-2.5 py-1 rounded-full text-[9px] font-bold flex items-center gap-1.5 shadow-sm">
+                  <span className="w-1.5 h-1.5 rounded-full bg-teal-brand animate-ping" />
+                  <span>Fully Operational</span>
                 </div>
               </div>
 
-              <div className="bg-white rounded-xl p-3 flex items-center gap-3 shadow-sm hover:scale-[1.01] transition-transform">
-                <span className="text-xl shrink-0">🚨</span>
-                <div className="flex-1">
-                  <div className="text-[11.5px] font-semibold text-dark leading-snug">Emergency room open 24/7</div>
-                  <div className="text-[9.5px] text-muted mt-0.5">Walk in anytime — no appointment needed</div>
+              {/* Patient Passport Data Roster */}
+              <div className="flex flex-col gap-3.5">
+                <div className="flex items-start gap-3 bg-cream/50 rounded-xl p-3 border border-border/40">
+                  <Clock className="w-4 h-4 text-teal-brand mt-0.5 shrink-0" />
+                  <div className="flex-1">
+                    <span className="text-[10px] font-bold text-muted uppercase tracking-wider block">Emergency & OPD Response</span>
+                    <span className="text-[12.5px] font-bold text-dark block mt-0.5">24 Hours / 7 Days On-Duty</span>
+                    <span className="text-[10px] text-mid block mt-0.5">Walk in directly — medical staff present at all hours.</span>
+                  </div>
                 </div>
-                <div className="bg-teal-light text-teal-dark px-2.5 py-1 rounded-full text-[9px] font-bold whitespace-nowrap flex items-center gap-1">
-                  <span className="w-1.5 h-1.5 rounded-full bg-teal-brand animate-blink" />
-                  <span>Open Now</span>
+
+                <div className="flex items-start gap-3 bg-cream/50 rounded-xl p-3 border border-border/40">
+                  <Users className="w-4 h-4 text-teal-brand mt-0.5 shrink-0" />
+                  <div className="flex-1">
+                    <span className="text-[10px] font-bold text-muted uppercase tracking-wider block">Clinical Language Gate</span>
+                    <span className="text-[12.5px] font-bold text-dark block mt-0.5">English & Multilingual Staff</span>
+                    <span className="text-[10px] text-mid block mt-0.5">Full translation support, medical documentation in English.</span>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3 bg-amber-light/70 rounded-xl p-3 border border-amber/10">
+                  <Award className="w-4 h-4 text-amber mt-0.5 shrink-0" />
+                  <div className="flex-1">
+                    <span className="text-[10px] font-bold text-amber-light text-dark uppercase tracking-wider block">AACI Certification</span>
+                    <span className="text-[12.5px] font-bold text-dark block mt-0.5">Accredited Ambulatory Facility</span>
+                    <span className="text-[10px] text-mid block mt-0.5">International safety and quality standards audited under US guidelines.</span>
+                  </div>
                 </div>
               </div>
             </div>
+
+            {/* Quick Actions / Micro-info cards */}
+            <div className="grid grid-cols-2 gap-4">
+              <div className="bg-white/80 backdrop-blur-md rounded-xl p-4 border border-white/50 shadow-md hover:translate-y-[-2px] transition-all duration-300">
+                <div className="w-7 h-7 rounded-lg bg-teal-light flex items-center justify-center text-teal-brand mb-2">
+                  <Shield className="w-4 h-4 text-teal-brand" />
+                </div>
+                <h4 className="text-[11.5px] font-bold text-dark">Insurance Gate</h4>
+                <p className="text-[9.5px] text-muted mt-1 leading-snug">Direct billing with 60+ global travel policies.</p>
+              </div>
+
+              <div className="bg-white/80 backdrop-blur-md rounded-xl p-4 border border-white/50 shadow-md hover:translate-y-[-2px] transition-all duration-300">
+                <div className="w-7 h-7 rounded-lg bg-red-50 flex items-center justify-center text-red-soft mb-2">
+                  <Heart className="w-4 h-4 text-red-soft" />
+                </div>
+                <h4 className="text-[11.5px] font-bold text-dark">Pediatric Clinic</h4>
+                <p className="text-[9.5px] text-muted mt-1 leading-snug">Comfortable diagnostic room for infants and children.</p>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
 
       {/* TRUST BAND */}
-      <section className="bg-dark text-white/80 py-5 px-6 lg:px-12">
-        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-[12.5px]">
+      <section className="bg-dark text-white/80 py-5 px-6 lg:px-12 select-none">
+        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-[12px] font-medium tracking-wide">
           <div className="flex items-center gap-2">
-            <span className="text-lg">💬</span>
+            <Users className="w-4 h-4 text-amber" />
             <span>{t("tbEnglish")}</span>
           </div>
           <div className="w-px h-4.5 bg-white/10 hidden sm:block" />
           <div className="flex items-center gap-2">
-            <span className="text-lg">🛡️</span>
+            <Shield className="w-4 h-4 text-amber" />
             <span>{t("tbInsurance")}</span>
           </div>
           <div className="w-px h-4.5 bg-white/10 hidden sm:block" />
           <div className="flex items-center gap-2">
-            <span className="text-lg">🚨</span>
+            <Activity className="w-4 h-4 text-red-soft" />
             <span>{t("tbEmergency")}</span>
           </div>
           <div className="w-px h-4.5 bg-white/10 hidden sm:block" />
           <div className="flex items-center gap-2">
-            <span className="text-lg">👶</span>
+            <Heart className="w-4 h-4 text-amber" />
             <span>{t("tbPaediatric")}</span>
           </div>
           <div className="w-px h-4.5 bg-white/10 hidden sm:block" />
           <div className="flex items-center gap-2">
-            <span className="text-lg">🏥</span>
+            <Award className="w-4 h-4 text-amber" />
             <span>{t("tbGroup")}</span>
           </div>
         </div>
@@ -337,11 +323,11 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Pediatric Card */}
-            <div className="bg-white rounded-2xl p-7 border border-border hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300">
-              <div className="w-12 h-12 rounded-xl bg-teal-light flex items-center justify-center text-2xl mb-5">
-                👶
+            <div className="bg-white rounded-2xl p-7 border border-border shadow-sm hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300">
+              <div className="w-12 h-12 rounded-xl bg-teal-light flex items-center justify-center mb-5">
+                <Heart className="w-6 h-6 text-teal-brand" />
               </div>
-              <h4 className="text-[15.5px] font-bold text-dark mb-2">
+              <h4 className="text-[15px] font-bold text-dark mb-2">
                 {t("famPediatricTitle")}
               </h4>
               <p className="text-[12.5px] leading-relaxed text-mid mb-5">
@@ -355,11 +341,11 @@ export default function Home() {
             </div>
 
             {/* Ocean Card */}
-            <div className="bg-white rounded-2xl p-7 border border-border hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300">
-              <div className="w-12 h-12 rounded-xl bg-ocean-light flex items-center justify-center text-2xl mb-5">
-                🌊
+            <div className="bg-white rounded-2xl p-7 border border-border shadow-sm hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300">
+              <div className="w-12 h-12 rounded-xl bg-ocean-light flex items-center justify-center mb-5">
+                <Compass className="w-6 h-6 text-teal-brand" />
               </div>
-              <h4 className="text-[15.5px] font-bold text-dark mb-2">
+              <h4 className="text-[15px] font-bold text-dark mb-2">
                 {t("famBeachTitle")}
               </h4>
               <p className="text-[12.5px] leading-relaxed text-mid mb-5">
@@ -373,11 +359,11 @@ export default function Home() {
             </div>
 
             {/* Insurance Card */}
-            <div className="bg-white rounded-2xl p-7 border border-border hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300">
-              <div className="w-12 h-12 rounded-xl bg-amber-light flex items-center justify-center text-2xl mb-5">
-                🛡️
+            <div className="bg-white rounded-2xl p-7 border border-border shadow-sm hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300">
+              <div className="w-12 h-12 rounded-xl bg-amber-light flex items-center justify-center mb-5">
+                <Shield className="w-6 h-6 text-amber" />
               </div>
-              <h4 className="text-[15.5px] font-bold text-dark mb-2">
+              <h4 className="text-[15px] font-bold text-dark mb-2">
                 {t("famInsTitle")}
               </h4>
               <p className="text-[12.5px] leading-relaxed text-mid mb-5">
@@ -408,8 +394,8 @@ export default function Home() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="flex gap-4">
-              <div className="w-10 h-10 bg-teal-light text-teal-dark rounded-lg flex items-center justify-center text-lg shrink-0 mt-0.5">
-                🚑
+              <div className="w-10 h-10 bg-teal-light text-teal-dark rounded-lg flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                <Activity className="w-5 h-5 text-teal-brand" />
               </div>
               <div>
                 <h4 className="text-[15px] font-semibold text-dark mb-1.5">OPD & ER 24hr</h4>
@@ -417,8 +403,8 @@ export default function Home() {
               </div>
             </div>
             <div className="flex gap-4">
-              <div className="w-10 h-10 bg-teal-light text-teal-dark rounded-lg flex items-center justify-center text-lg shrink-0 mt-0.5">
-                🤿
+              <div className="w-10 h-10 bg-teal-light text-teal-dark rounded-lg flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                <Compass className="w-5 h-5 text-teal-brand" />
               </div>
               <div>
                 <h4 className="text-[15px] font-semibold text-dark mb-1.5">Dive Medicine Specialist</h4>
@@ -426,8 +412,8 @@ export default function Home() {
               </div>
             </div>
             <div className="flex gap-4">
-              <div className="w-10 h-10 bg-teal-light text-teal-dark rounded-lg flex items-center justify-center text-lg shrink-0 mt-0.5">
-                🩺
+              <div className="w-10 h-10 bg-teal-light text-teal-dark rounded-lg flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                <Shield className="w-5 h-5 text-teal-brand" />
               </div>
               <div>
                 <h4 className="text-[15px] font-semibold text-dark mb-1.5">Health Checkup Center</h4>
@@ -435,8 +421,8 @@ export default function Home() {
               </div>
             </div>
             <div className="flex gap-4">
-              <div className="w-10 h-10 bg-teal-light text-teal-dark rounded-lg flex items-center justify-center text-lg shrink-0 mt-0.5">
-                🔪
+              <div className="w-10 h-10 bg-teal-light text-teal-dark rounded-lg flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                <Award className="w-5 h-5 text-teal-brand" />
               </div>
               <div>
                 <h4 className="text-[15px] font-semibold text-dark mb-1.5">General Surgery</h4>
@@ -444,8 +430,8 @@ export default function Home() {
               </div>
             </div>
             <div className="flex gap-4">
-              <div className="w-10 h-10 bg-teal-light text-teal-dark rounded-lg flex items-center justify-center text-lg shrink-0 mt-0.5">
-                🔬
+              <div className="w-10 h-10 bg-teal-light text-teal-dark rounded-lg flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                <Search className="w-5 h-5 text-teal-brand" />
               </div>
               <div>
                 <h4 className="text-[15px] font-semibold text-dark mb-1.5">Lab & Diagnostics</h4>
@@ -453,8 +439,8 @@ export default function Home() {
               </div>
             </div>
             <div className="flex gap-4">
-              <div className="w-10 h-10 bg-teal-light text-teal-dark rounded-lg flex items-center justify-center text-lg shrink-0 mt-0.5">
-                💊
+              <div className="w-10 h-10 bg-teal-light text-teal-dark rounded-lg flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                <Heart className="w-5 h-5 text-teal-brand" />
               </div>
               <div>
                 <h4 className="text-[15px] font-semibold text-dark mb-1.5">24h Pharmacy</h4>
@@ -572,7 +558,7 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
             {filteredInsurances.slice(0, 8).map((ins) => (
               <div key={ins} className="bg-white/10 border border-white/15 rounded-xl p-5 text-center hover:bg-white/15 transition-colors duration-200">
-                <span className="text-xl mb-2 block">🛡️</span>
+                <Shield className="w-5 h-5 text-amber mx-auto mb-3" />
                 <div className="text-[13.5px] font-bold text-white mb-0.5">{ins}</div>
                 <div className="text-[10px] text-white/50">Accepted Direct Billing</div>
               </div>
@@ -585,7 +571,7 @@ export default function Home() {
           </div>
 
           <div className="bg-white/5 border border-white/10 rounded-xl p-4.5 text-[12.5px] text-white/70 leading-relaxed flex items-start gap-3">
-            <span className="text-lg mt-0.5 shrink-0">ℹ️</span>
+            <AlertCircle className="w-5 h-5 text-amber shrink-0 mt-0.5" />
             <span>{t("insNote")}</span>
           </div>
         </div>
@@ -611,7 +597,7 @@ export default function Home() {
               <span className="text-[9.5px] bg-white/20 text-white font-bold uppercase tracking-wider px-2 py-1 rounded-full w-fit mb-4">
                 {t("pkgDiveTag")}
               </span>
-              <div className="text-3xl mb-2">🤿</div>
+              <Compass className="w-8 h-8 text-white mb-3" />
               <h4 className="font-serif text-[17px] font-semibold mb-1">
                 {t("pkgDiveTitle")}
               </h4>
@@ -624,10 +610,10 @@ export default function Home() {
               </div>
               <div className="w-full h-px bg-white/20 mb-4" />
               <ul className="list-none m-0 p-0 flex-1 flex flex-col gap-2.5">
-                <li className="text-[11.5px] text-white/90 flex gap-2"><span className="text-[10px] text-white/60">✓</span> {t("pkgDiveItem1")}</li>
-                <li className="text-[11.5px] text-white/90 flex gap-2"><span className="text-[10px] text-white/60">✓</span> {t("pkgDiveItem2")}</li>
-                <li className="text-[11.5px] text-white/90 flex gap-2"><span className="text-[10px] text-white/60">✓</span> {t("pkgDiveItem3")}</li>
-                <li className="text-[11.5px] text-white/90 flex gap-2"><span className="text-[10px] text-white/60">✓</span> {t("pkgDiveItem4")}</li>
+                <li className="text-[11.5px] text-white/90 flex gap-2"><Check className="w-3.5 h-3.5 text-white/60 shrink-0 mt-0.5" /> {t("pkgDiveItem1")}</li>
+                <li className="text-[11.5px] text-white/90 flex gap-2"><Check className="w-3.5 h-3.5 text-white/60 shrink-0 mt-0.5" /> {t("pkgDiveItem2")}</li>
+                <li className="text-[11.5px] text-white/90 flex gap-2"><Check className="w-3.5 h-3.5 text-white/60 shrink-0 mt-0.5" /> {t("pkgDiveItem3")}</li>
+                <li className="text-[11.5px] text-white/90 flex gap-2"><Check className="w-3.5 h-3.5 text-white/60 shrink-0 mt-0.5" /> {t("pkgDiveItem4")}</li>
               </ul>
               <Link href="#contact-form" className="text-[12px] font-bold text-white hover:underline mt-6 flex items-center justify-between group decoration-transparent">
                 <span>{t("pkgActionInquire")}</span>
@@ -640,7 +626,7 @@ export default function Home() {
               <span className="text-[9.5px] bg-teal-light text-teal-dark font-bold uppercase tracking-wider px-2 py-1 rounded-full w-fit mb-4">
                 {t("pkgIslandTag")}
               </span>
-              <div className="text-3xl mb-2">🩺</div>
+              <Heart className="w-8 h-8 text-teal-brand mb-3" />
               <h4 className="font-serif text-[17px] font-semibold text-dark mb-1">
                 {t("pkgIslandTitle")}
               </h4>
@@ -653,10 +639,10 @@ export default function Home() {
               </div>
               <div className="w-full h-px bg-black/5 mb-4" />
               <ul className="list-none m-0 p-0 flex-1 flex flex-col gap-2.5">
-                <li className="text-[11.5px] text-mid flex gap-2"><span className="text-[10px] text-teal-brand font-bold">✓</span> {t("pkgIslandItem1")}</li>
-                <li className="text-[11.5px] text-mid flex gap-2"><span className="text-[10px] text-teal-brand font-bold">✓</span> {t("pkgIslandItem2")}</li>
-                <li className="text-[11.5px] text-mid flex gap-2"><span className="text-[10px] text-teal-brand font-bold">✓</span> {t("pkgIslandItem3")}</li>
-                <li className="text-[11.5px] text-mid flex gap-2"><span className="text-[10px] text-teal-brand font-bold">✓</span> {t("pkgIslandItem4")}</li>
+                <li className="text-[11.5px] text-mid flex gap-2"><Check className="w-3.5 h-3.5 text-teal-brand shrink-0 mt-0.5" /> {t("pkgIslandItem1")}</li>
+                <li className="text-[11.5px] text-mid flex gap-2"><Check className="w-3.5 h-3.5 text-teal-brand shrink-0 mt-0.5" /> {t("pkgIslandItem2")}</li>
+                <li className="text-[11.5px] text-mid flex gap-2"><Check className="w-3.5 h-3.5 text-teal-brand shrink-0 mt-0.5" /> {t("pkgIslandItem3")}</li>
+                <li className="text-[11.5px] text-mid flex gap-2"><Check className="w-3.5 h-3.5 text-teal-brand shrink-0 mt-0.5" /> {t("pkgIslandItem4")}</li>
               </ul>
               <Link href="#contact-form" className="text-[12px] font-bold text-ocean hover:underline mt-6 flex items-center justify-between group decoration-transparent">
                 <span>{t("pkgActionInquire")}</span>
@@ -669,7 +655,7 @@ export default function Home() {
               <span className="text-[9.5px] bg-amber-light text-amber font-bold uppercase tracking-wider px-2 py-1 rounded-full w-fit mb-4">
                 {t("pkgHealthTag")}
               </span>
-              <div className="text-3xl mb-2">❤️</div>
+              <Activity className="w-8 h-8 text-amber mb-3" />
               <h4 className="font-serif text-[17px] font-semibold text-dark mb-1">
                 {t("pkgHealthTitle")}
               </h4>
@@ -682,10 +668,10 @@ export default function Home() {
               </div>
               <div className="w-full h-px bg-black/5 mb-4" />
               <ul className="list-none m-0 p-0 flex-1 flex flex-col gap-2.5">
-                <li className="text-[11.5px] text-mid flex gap-2"><span className="text-[10px] text-teal-brand font-bold">✓</span> {t("pkgHealthItem1")}</li>
-                <li className="text-[11.5px] text-mid flex gap-2"><span className="text-[10px] text-teal-brand font-bold">✓</span> {t("pkgHealthItem2")}</li>
-                <li className="text-[11.5px] text-mid flex gap-2"><span className="text-[10px] text-teal-brand font-bold">✓</span> {t("pkgHealthItem3")}</li>
-                <li className="text-[11.5px] text-mid flex gap-2"><span className="text-[10px] text-teal-brand font-bold">✓</span> {t("pkgHealthItem4")}</li>
+                <li className="text-[11.5px] text-mid flex gap-2"><Check className="w-3.5 h-3.5 text-teal-brand shrink-0 mt-0.5" /> {t("pkgHealthItem1")}</li>
+                <li className="text-[11.5px] text-mid flex gap-2"><Check className="w-3.5 h-3.5 text-teal-brand shrink-0 mt-0.5" /> {t("pkgHealthItem2")}</li>
+                <li className="text-[11.5px] text-mid flex gap-2"><Check className="w-3.5 h-3.5 text-teal-brand shrink-0 mt-0.5" /> {t("pkgHealthItem3")}</li>
+                <li className="text-[11.5px] text-mid flex gap-2"><Check className="w-3.5 h-3.5 text-teal-brand shrink-0 mt-0.5" /> {t("pkgHealthItem4")}</li>
               </ul>
               <Link href="#contact-form" className="text-[12px] font-bold text-amber hover:underline mt-6 flex items-center justify-between group decoration-transparent">
                 <span>{t("pkgActionInquire")}</span>
@@ -698,7 +684,7 @@ export default function Home() {
               <span className="text-[9.5px] bg-black/5 text-mid font-bold uppercase tracking-wider px-2 py-1 rounded-full w-fit mb-4">
                 {t("pkgResortTag")}
               </span>
-              <div className="text-3xl mb-2">🏨</div>
+              <Award className="w-8 h-8 text-dark mb-3 animate-pulse" />
               <h4 className="font-serif text-[17px] font-semibold text-dark mb-1">
                 {t("pkgResortTitle")}
               </h4>
@@ -711,10 +697,10 @@ export default function Home() {
               </div>
               <div className="w-full h-px bg-black/5 mb-4" />
               <ul className="list-none m-0 p-0 flex-1 flex flex-col gap-2.5">
-                <li className="text-[11.5px] text-mid flex gap-2"><span className="text-[10px] text-teal-brand font-bold">✓</span> {t("pkgResortItem1")}</li>
-                <li className="text-[11.5px] text-mid flex gap-2"><span className="text-[10px] text-teal-brand font-bold">✓</span> {t("pkgResortItem2")}</li>
-                <li className="text-[11.5px] text-mid flex gap-2"><span className="text-[10px] text-teal-brand font-bold">✓</span> {t("pkgResortItem3")}</li>
-                <li className="text-[11.5px] text-mid flex gap-2"><span className="text-[10px] text-teal-brand font-bold">✓</span> {t("pkgResortItem4")}</li>
+                <li className="text-[11.5px] text-mid flex gap-2"><Check className="w-3.5 h-3.5 text-teal-brand shrink-0 mt-0.5" /> {t("pkgResortItem1")}</li>
+                <li className="text-[11.5px] text-mid flex gap-2"><Check className="w-3.5 h-3.5 text-teal-brand shrink-0 mt-0.5" /> {t("pkgResortItem2")}</li>
+                <li className="text-[11.5px] text-mid flex gap-2"><Check className="w-3.5 h-3.5 text-teal-brand shrink-0 mt-0.5" /> {t("pkgResortItem3")}</li>
+                <li className="text-[11.5px] text-mid flex gap-2"><Check className="w-3.5 h-3.5 text-teal-brand shrink-0 mt-0.5" /> {t("pkgResortItem4")}</li>
               </ul>
               <Link href="#contact-form" className="text-[12px] font-bold text-dark hover:underline mt-6 flex items-center justify-between group decoration-transparent">
                 <span>{t("pkgActionContact")}</span>
@@ -742,36 +728,46 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col gap-3">
-            <div className="bg-white rounded-xl p-4.5 border border-border flex items-start gap-4">
-              <span className="w-6 h-6 rounded bg-teal-light text-teal-dark flex items-center justify-center font-bold text-sm shrink-0">✓</span>
+            <div className="bg-white rounded-xl p-4.5 border border-border flex items-start gap-4 shadow-sm">
+              <div className="w-6 h-6 rounded bg-teal-light flex items-center justify-center shrink-0 mt-0.5 shadow-inner">
+                <Check className="w-3.5 h-3.5 text-teal-brand" />
+              </div>
               <div>
                 <div className="text-[13px] font-bold text-dark mb-1">{t("checkItem1Title")}</div>
                 <div className="text-[11.5px] text-muted leading-relaxed">{t("checkItem1Desc")}</div>
               </div>
             </div>
-            <div className="bg-white rounded-xl p-4.5 border border-border flex items-start gap-4">
-              <span className="w-6 h-6 rounded bg-teal-light text-teal-dark flex items-center justify-center font-bold text-sm shrink-0">✓</span>
+            <div className="bg-white rounded-xl p-4.5 border border-border flex items-start gap-4 shadow-sm">
+              <div className="w-6 h-6 rounded bg-teal-light flex items-center justify-center shrink-0 mt-0.5 shadow-inner">
+                <Check className="w-3.5 h-3.5 text-teal-brand" />
+              </div>
               <div>
                 <div className="text-[13px] font-bold text-dark mb-1">{t("checkItem2Title")}</div>
                 <div className="text-[11.5px] text-muted leading-relaxed">{t("checkItem2Desc")}</div>
               </div>
             </div>
-            <div className="bg-white rounded-xl p-4.5 border border-border flex items-start gap-4">
-              <span className="w-6 h-6 rounded bg-teal-light text-teal-dark flex items-center justify-center font-bold text-sm shrink-0">✓</span>
+            <div className="bg-white rounded-xl p-4.5 border border-border flex items-start gap-4 shadow-sm">
+              <div className="w-6 h-6 rounded bg-teal-light flex items-center justify-center shrink-0 mt-0.5 shadow-inner">
+                <Check className="w-3.5 h-3.5 text-teal-brand" />
+              </div>
               <div>
                 <div className="text-[13px] font-bold text-dark mb-1">{t("checkItem3Title")}</div>
                 <div className="text-[11.5px] text-muted leading-relaxed">{t("checkItem3Desc")}</div>
               </div>
             </div>
-            <div className="bg-white rounded-xl p-4.5 border border-border flex items-start gap-4">
-              <span className="w-6 h-6 rounded bg-teal-light text-teal-dark flex items-center justify-center font-bold text-sm shrink-0">✓</span>
+            <div className="bg-white rounded-xl p-4.5 border border-border flex items-start gap-4 shadow-sm">
+              <div className="w-6 h-6 rounded bg-teal-light flex items-center justify-center shrink-0 mt-0.5 shadow-inner">
+                <Check className="w-3.5 h-3.5 text-teal-brand" />
+              </div>
               <div>
                 <div className="text-[13px] font-bold text-dark mb-1">{t("checkItem4Title")}</div>
                 <div className="text-[11.5px] text-muted leading-relaxed">{t("checkItem4Desc")}</div>
               </div>
             </div>
-            <div className="bg-white rounded-xl p-4.5 border border-border flex items-start gap-4">
-              <span className="w-6 h-6 rounded bg-teal-light text-teal-dark flex items-center justify-center font-bold text-sm shrink-0">✓</span>
+            <div className="bg-white rounded-xl p-4.5 border border-border flex items-start gap-4 shadow-sm">
+              <div className="w-6 h-6 rounded bg-teal-light flex items-center justify-center shrink-0 mt-0.5 shadow-inner">
+                <Check className="w-3.5 h-3.5 text-teal-brand" />
+              </div>
               <div>
                 <div className="text-[13px] font-bold text-dark mb-1">{t("checkItem5Title")}</div>
                 <div className="text-[11.5px] text-muted leading-relaxed">{t("checkItem5Desc")}</div>
@@ -795,7 +791,9 @@ export default function Home() {
 
             <div className="flex flex-col gap-6">
               <div className="flex gap-4 border-b border-border pb-6">
-                <div className="w-10 h-10 rounded-xl bg-teal-light text-teal-dark flex items-center justify-center text-lg shrink-0">📍</div>
+                <div className="w-10 h-10 rounded-xl bg-teal-light text-teal-dark flex items-center justify-center shrink-0 shadow-sm">
+                  <MapPin className="w-5 h-5 text-teal-brand" />
+                </div>
                 <div>
                   <div className="text-[11px] font-semibold text-muted tracking-wider mb-1">{t("locAddressLabel")}</div>
                   <div className="text-[13.5px] leading-relaxed text-dark font-medium whitespace-pre-line">{t("locAddressVal")}</div>
@@ -808,7 +806,9 @@ export default function Home() {
               </div>
 
               <div className="flex gap-4 border-b border-border pb-6">
-                <div className="w-10 h-10 rounded-xl bg-teal-light text-teal-dark flex items-center justify-center text-lg shrink-0">🕐</div>
+                <div className="w-10 h-10 rounded-xl bg-teal-light text-teal-dark flex items-center justify-center shrink-0 shadow-sm">
+                  <Clock className="w-5 h-5 text-teal-brand" />
+                </div>
                 <div>
                   <div className="text-[11px] font-semibold text-muted tracking-wider mb-1">{t("locHoursLabel")}</div>
                   <div className="text-[13.5px] leading-relaxed text-dark font-medium whitespace-pre-line">{t("locHoursVal")}</div>
@@ -816,9 +816,11 @@ export default function Home() {
               </div>
 
               <div className="flex gap-4 border-b border-border pb-6">
-                <div className="w-10 h-10 rounded-xl bg-teal-light text-teal-dark flex items-center justify-center text-lg shrink-0">📞</div>
+                <div className="w-10 h-10 rounded-xl bg-teal-light text-teal-dark flex items-center justify-center shrink-0 shadow-sm">
+                  <Phone className="w-5 h-5 text-teal-brand" />
+                </div>
                 <div>
-                  <div className="text-[11px] font-semibold text-muted tracking-wider mb-1">{t("locAddressLabel")}</div>
+                  <div className="text-[11px] font-semibold text-muted tracking-wider mb-1">{t("locPhoneLabel")}</div>
                   <div className="text-[13.5px] leading-relaxed text-dark font-medium whitespace-pre-line font-serif font-bold">
                     <a href="tel:+66815697890" className="hover:underline">{t("locPhoneVal")}</a>
                   </div>
@@ -826,7 +828,9 @@ export default function Home() {
               </div>
 
               <div className="flex gap-4">
-                <div className="w-10 h-10 rounded-xl bg-teal-light text-teal-dark flex items-center justify-center text-lg shrink-0">💬</div>
+                <div className="w-10 h-10 rounded-xl bg-teal-light text-teal-dark flex items-center justify-center shrink-0 shadow-sm">
+                  <Users className="w-5 h-5 text-teal-brand" />
+                </div>
                 <div>
                   <div className="text-[11px] font-semibold text-muted tracking-wider mb-1">{t("locSocialLabel")}</div>
                   <div className="text-[13.5px] leading-relaxed text-dark font-medium whitespace-pre-line">{t("locSocialVal")}</div>

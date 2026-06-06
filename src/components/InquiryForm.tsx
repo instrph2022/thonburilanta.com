@@ -10,24 +10,37 @@ export default function InquiryForm() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
+  const [insuranceInfo, setInsuranceInfo] = useState("");
+  const [nationality, setNationality] = useState("");
+  const [lengthOfStay, setLengthOfStay] = useState("");
+  const [currentStay, setCurrentStay] = useState("");
   const [serviceInterest, setServiceInterest] = useState("");
   const [message, setMessage] = useState("");
 
   const [loading, setLoading] = useState(false);
   const [statusMsg, setStatusMsg] = useState<{ type: "success" | "error"; text: string } | null>(null);
 
+  const showStatusMsg = (msg: { type: "success" | "error"; text: string } | null) => {
+    setStatusMsg(msg);
+    if (msg) {
+      setTimeout(() => {
+        document.getElementById("contact-form")?.scrollIntoView({ behavior: "smooth" });
+      }, 50);
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setStatusMsg(null);
+    showStatusMsg(null);
 
     // Basic validation
     if (!name.trim()) {
-      setStatusMsg({ type: "error", text: language === "en" ? "Full name is required." : "กรุณากรอกชื่อ-นามสกุล" });
+      showStatusMsg({ type: "error", text: language === "en" ? "Full name is required." : "กรุณากรอกชื่อ-นามสกุล" });
       return;
     }
 
     if (!phone.trim() && !email.trim()) {
-      setStatusMsg({
+      showStatusMsg({
         type: "error",
         text: language === "en" ? "Please provide either a phone number or email address." : "กรุณากรอกเบอร์โทรศัพท์หรืออีเมลอย่างใดอย่างหนึ่ง",
       });
@@ -35,7 +48,7 @@ export default function InquiryForm() {
     }
 
     if (!serviceInterest) {
-      setStatusMsg({
+      showStatusMsg({
         type: "error",
         text: language === "en" ? "Please select a service interest." : "กรุณาเลือกบริการที่สนใจ",
       });
@@ -55,21 +68,29 @@ export default function InquiryForm() {
           message: message.trim() || null,
           language: language,
           status: "new",
+          insurance_info: insuranceInfo.trim() || null,
+          nationality: nationality.trim() || null,
+          length_of_stay: lengthOfStay.trim() || null,
+          current_stay: currentStay.trim() || null,
         },
       ]);
 
       if (error) throw error;
 
-      setStatusMsg({ type: "success", text: t("inqSuccess") });
+      showStatusMsg({ type: "success", text: t("inqSuccess") });
       // Reset form
       setName("");
       setPhone("");
       setEmail("");
+      setInsuranceInfo("");
+      setNationality("");
+      setLengthOfStay("");
+      setCurrentStay("");
       setServiceInterest("");
       setMessage("");
     } catch (err: unknown) {
       console.error("Error submitting inquiry:", err);
-      setStatusMsg({ type: "error", text: t("inqError") });
+      showStatusMsg({ type: "error", text: t("inqError") });
     } finally {
       setLoading(false);
     }
@@ -141,6 +162,62 @@ export default function InquiryForm() {
             placeholder={t("inqPlaceholderEmail")}
             className="w-full border border-black/10 rounded-lg p-2.5 text-[13px] outline-none focus:border-teal-brand bg-warm-white transition-colors"
           />
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="flex flex-col">
+            <label className="text-[11px] font-semibold text-mid mb-1.5 uppercase tracking-wider">
+              {t("inqFieldInsuranceInfo")}
+            </label>
+            <input
+              type="text"
+              value={insuranceInfo}
+              onChange={(e) => setInsuranceInfo(e.target.value)}
+              placeholder={t("inqPlaceholderInsuranceInfo")}
+              className="w-full border border-black/10 rounded-lg p-2.5 text-[13px] outline-none focus:border-teal-brand bg-warm-white transition-colors"
+            />
+          </div>
+
+          <div className="flex flex-col">
+            <label className="text-[11px] font-semibold text-mid mb-1.5 uppercase tracking-wider">
+              {t("inqFieldNationality")}
+            </label>
+            <input
+              type="text"
+              value={nationality}
+              onChange={(e) => setNationality(e.target.value)}
+              placeholder={t("inqPlaceholderNationality")}
+              className="w-full border border-black/10 rounded-lg p-2.5 text-[13px] outline-none focus:border-teal-brand bg-warm-white transition-colors"
+            />
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="flex flex-col">
+            <label className="text-[11px] font-semibold text-mid mb-1.5 uppercase tracking-wider">
+              {t("inqFieldCurrentStay")}
+            </label>
+            <input
+              type="text"
+              value={currentStay}
+              onChange={(e) => setCurrentStay(e.target.value)}
+              placeholder={t("inqPlaceholderCurrentStay")}
+              className="w-full border border-black/10 rounded-lg p-2.5 text-[13px] outline-none focus:border-teal-brand bg-warm-white transition-colors"
+            />
+          </div>
+
+          <div className="flex flex-col">
+            <label className="text-[11px] font-semibold text-mid mb-1.5 uppercase tracking-wider">
+              {t("inqFieldLengthOfStay")}
+            </label>
+            <input
+              type="text"
+              value={lengthOfStay}
+              onChange={(e) => setLengthOfStay(e.target.value)}
+              placeholder={t("inqPlaceholderLengthOfStay")}
+              className="w-full border border-black/10 rounded-lg p-2.5 text-[13px] outline-none focus:border-teal-brand bg-warm-white transition-colors"
+            />
+          </div>
         </div>
 
         <div className="flex flex-col">

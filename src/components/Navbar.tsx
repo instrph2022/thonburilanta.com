@@ -27,8 +27,10 @@ export default function Navbar() {
       <div className="w-full flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group decoration-transparent">
-          <div className="w-9 h-9 bg-teal-brand text-white rounded-lg flex items-center justify-center text-lg font-bold group-hover:scale-105 transition-transform">
-            🏥
+          <div className="w-9 h-9 bg-teal-brand text-white rounded-lg flex items-center justify-center p-2 group-hover:scale-105 transition-transform">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-amber">
+              <path d="M12 5v14M5 12h14" />
+            </svg>
           </div>
           <div className="flex flex-col leading-none">
             <span className="font-serif text-[14px] font-semibold text-dark tracking-tight">

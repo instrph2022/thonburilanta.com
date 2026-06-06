@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Prompt, Sarabun } from "next/font/google";
+import { Inter, Prompt, Sarabun, Lora } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/Providers";
 import Navbar from "@/components/Navbar";
@@ -25,6 +25,13 @@ const sarabun = Sarabun({
   display: "swap",
 });
 
+const lora = Lora({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-lora",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Thonburi Lanta Hospital — Healthcare on Koh Lanta",
   description: "A full-service 36-bed hospital on Koh Lanta with 24/7 emergency room, English-speaking doctors, and international health insurance direct billing.",
@@ -47,7 +54,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${inter.variable} ${prompt.variable} ${sarabun.variable} font-sans antialiased bg-warm-white text-dark`}
+        className={`${inter.variable} ${prompt.variable} ${sarabun.variable} ${lora.variable} font-sans antialiased bg-warm-white text-dark`}
       >
         <Providers>
           <Navbar />

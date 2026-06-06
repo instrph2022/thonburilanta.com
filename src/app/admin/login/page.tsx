@@ -51,8 +51,10 @@ export default function AdminLoginPage() {
       <div className="bg-white rounded-2xl p-8 border border-border shadow-sm max-w-md w-full">
         {/* Brand Header */}
         <div className="text-center mb-8">
-          <div className="w-12 h-12 bg-teal-brand text-white rounded-xl flex items-center justify-center text-2xl mx-auto mb-3 shadow-md">
-            🏥
+          <div className="w-12 h-12 bg-teal-brand text-white rounded-xl flex items-center justify-center p-2.5 mx-auto mb-3 shadow-md">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-amber">
+              <path d="M12 5v14M5 12h14" />
+            </svg>
           </div>
           <h1 className="font-serif text-2xl font-normal text-dark">
             Thonburi Lanta Hospital

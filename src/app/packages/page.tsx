@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
-import { Check, Info, ArrowLeft, Star, Shield } from "lucide-react";
+import { Check, Info, ArrowLeft, Star, Shield, Compass, Heart, Activity, Award, Users } from "lucide-react";
 
 export default function PackagesPage() {
   const { language, t } = useLanguage();
@@ -12,7 +12,7 @@ export default function PackagesPage() {
     {
       id: "dive_safety",
       isHero: true,
-      tag: language === "en" ? "⭐ Hero Package" : "⭐ แพ็กเกจยอดนิยม",
+      tag: language === "en" ? "Hero Package" : "แพ็กเกจยอดนิยม",
       icon: "🤿",
       title: t("pkgDiveTitle"),
       tagline: t("pkgDiveSub"),
@@ -178,7 +178,18 @@ export default function PackagesPage() {
                   {pkg.isHero && <Star className="w-4 h-4 text-amber fill-amber shrink-0" />}
                 </div>
 
-                <div className="text-4xl mb-3">{pkg.icon}</div>
+                {(() => {
+                  const cn = `w-8 h-8 mb-3 ${pkg.isHero ? "text-white" : "text-teal-brand"}`;
+                  switch(pkg.icon) {
+                    case "🤿": return <Compass className={cn} />;
+                    case "🩺": return <Heart className={cn} />;
+                    case "❤️": return <Activity className={cn} />;
+                    case "💖": return <Shield className={cn} />;
+                    case "🏢": return <Award className={cn} />;
+                    case "🤝": return <Users className={cn} />;
+                    default: return <Shield className={cn} />;
+                  }
+                })()}
                 <h3 className="font-serif text-[19px] font-semibold mb-1">
                   {pkg.title}
                 </h3>

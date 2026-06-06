@@ -15,8 +15,10 @@ export default function Footer() {
           {/* Brand Info */}
           <div className="flex flex-col gap-3">
             <Link href="/" className="flex items-center gap-2 group decoration-transparent">
-              <div className="w-8 h-8 bg-teal-brand text-white rounded-lg flex items-center justify-center text-md font-bold">
-                🏥
+              <div className="w-8 h-8 bg-teal-brand text-white rounded-lg flex items-center justify-center p-1.5">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-amber">
+                  <path d="M12 5v14M5 12h14" />
+                </svg>
               </div>
               <div className="flex flex-col leading-none">
                 <span className="font-serif text-[15px] font-semibold text-white tracking-tight">
@@ -121,8 +123,8 @@ export default function Footer() {
         href="tel:+66815697890"
         className="fixed bottom-5 right-5 z-[300] bg-red-soft text-white rounded-full py-3 px-5 flex md:hidden items-center gap-2 text-[13px] font-semibold shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all select-none animate-float2 decoration-transparent"
       >
-        <span className="w-2 h-2 rounded-full bg-white animate-blink" />
-        <span>🚨 EMERGENCY 24/7</span>
+        <Phone className="w-4 h-4 text-white animate-pulse" />
+        <span>EMERGENCY 24/7</span>
       </a>
     </footer>
   );

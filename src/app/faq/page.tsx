@@ -100,7 +100,7 @@ export default function FAQPage() {
           <div className="text-center mb-12">
             <div className="text-[10px] font-semibold tracking-[2px] uppercase text-teal-brand mb-3 flex items-center justify-center gap-1.5">
               <HelpCircle className="w-4.5 h-4.5 text-teal-brand" />
-              <span>FAQ / AEO OPTIMIZED</span>
+              <span>{language === "en" ? "PATIENT SUPPORT" : "ศูนย์ช่วยเหลือผู้ป่วย"}</span>
             </div>
             <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-dark tracking-tight mb-4">
               {language === "en" ? "Frequently Asked Questions" : "คำถามที่พบบ่อย"}
