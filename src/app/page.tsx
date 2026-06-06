@@ -195,13 +195,14 @@ export default function Home() {
         </div>
 
         {/* HERO RIGHT */}
-        <div className="bg-cream relative flex flex-col justify-center items-center py-16 px-6 lg:px-12 border-l border-border overflow-hidden">
-          {/* Abstract tropical gradient bg */}
-          <div className="absolute inset-0 bg-gradient-to-br from-teal-light/40 via-sand/20 to-ocean-light/30 pointer-events-none" />
-
-          {/* Decorative geometric blur circles */}
-          <div className="absolute top-1/4 right-1/4 w-72 h-72 rounded-full bg-teal-mid/5 blur-3xl pointer-events-none" />
-          <div className="absolute bottom-1/4 left-1/4 w-80 h-80 rounded-full bg-amber/5 blur-3xl pointer-events-none" />
+        <div className="relative flex flex-col justify-center items-center py-16 px-6 lg:px-12 border-l border-border overflow-hidden min-h-[500px]">
+          {/* Main Hospital Exterior Render Background */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center transition-transform duration-[10000ms] hover:scale-105"
+            style={{ backgroundImage: "url('/hospital_exterior.jpg')" }}
+          />
+          {/* Premium dark/glass overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-dark/95 via-dark/45 to-transparent pointer-events-none" />
 
           <div className="relative z-10 w-full max-w-[440px] flex flex-col gap-6">
             
@@ -593,7 +594,8 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Package 1 */}
-            <div className="bg-teal-brand border border-teal-brand rounded-2xl p-6.5 text-white flex flex-col hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300">
+            <div className="bg-teal-brand border border-teal-brand rounded-2xl p-6.5 text-white flex flex-col hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300 overflow-hidden">
+              <img src="/hyperbaric.png" alt="Hyperbaric Chamber" className="w-[calc(100%+3.25rem)] h-32 object-cover -mt-6.5 -mx-6.5 mb-5 opacity-90 hover:scale-105 transition-transform duration-500" />
               <span className="text-[9.5px] bg-white/20 text-white font-bold uppercase tracking-wider px-2 py-1 rounded-full w-fit mb-4">
                 {t("pkgDiveTag")}
               </span>
@@ -622,7 +624,8 @@ export default function Home() {
             </div>
 
             {/* Package 2 */}
-            <div className="bg-white border border-border rounded-2xl p-6.5 flex flex-col hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300">
+            <div className="bg-white border border-border rounded-2xl p-6.5 flex flex-col hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300 overflow-hidden">
+              <img src="/reception.png" alt="Hospital Reception" className="w-[calc(100%+3.25rem)] h-32 object-cover -mt-6.5 -mx-6.5 mb-5 hover:scale-105 transition-transform duration-500" />
               <span className="text-[9.5px] bg-teal-light text-teal-dark font-bold uppercase tracking-wider px-2 py-1 rounded-full w-fit mb-4">
                 {t("pkgIslandTag")}
               </span>
@@ -651,7 +654,8 @@ export default function Home() {
             </div>
 
             {/* Package 3 */}
-            <div className="bg-white border border-border rounded-2xl p-6.5 flex flex-col hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300">
+            <div className="bg-white border border-border rounded-2xl p-6.5 flex flex-col hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300 overflow-hidden">
+              <img src="/ct_scan.png" alt="CT Scan Room" className="w-[calc(100%+3.25rem)] h-32 object-cover -mt-6.5 -mx-6.5 mb-5 hover:scale-105 transition-transform duration-500" />
               <span className="text-[9.5px] bg-amber-light text-amber font-bold uppercase tracking-wider px-2 py-1 rounded-full w-fit mb-4">
                 {t("pkgHealthTag")}
               </span>
@@ -680,7 +684,8 @@ export default function Home() {
             </div>
 
             {/* Package 4 */}
-            <div className="bg-white border border-border rounded-2xl p-6.5 flex flex-col hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300">
+            <div className="bg-white border border-border rounded-2xl p-6.5 flex flex-col hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300 overflow-hidden">
+              <img src="/hospital_exterior.jpg" alt="Thonburi Lanta Hospital" className="w-[calc(100%+3.25rem)] h-32 object-cover -mt-6.5 -mx-6.5 mb-5 hover:scale-105 transition-transform duration-500" />
               <span className="text-[9.5px] bg-black/5 text-mid font-bold uppercase tracking-wider px-2 py-1 rounded-full w-fit mb-4">
                 {t("pkgResortTag")}
               </span>
