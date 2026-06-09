@@ -23,11 +23,32 @@ const INSURANCES = [
 
 const REVIEWS = [
   {
-    name: "Laura Moggs",
+    name: "ณัฐชล สุวรรณวร",
     rating: 5,
-    date: "2025-02-25",
-    text: "Probably the best health care experience of my life. Seen very quickly and given exceptional care. The clinic manager Joah was on hand at all times and sat with me whilst my medication was being prepared as I was alone. Couldn’t fault my experience. The loveliest people work here!",
-    avatar: "L"
+    date: "3 เดือนที่แล้ว",
+    text: "น่ารัก บริการดี ตั้งแต่วันแรกที่เกิดอุบัติเหตุ รักษาต่อเนื่องเพราะเป็นกันเองสุดๆค่ะ พี่ๆห้องทำแผลน่ารักมากค่ะ หมอหล่อค่ะ 😆",
+    avatar: "ณ"
+  },
+  {
+    name: "มาริอ้อนคลินิก ศัลยกรรม",
+    rating: 5,
+    date: "8 เดือนที่แล้ว",
+    text: "ขอบพระคุณเจ้าหน้าที่ พยาบาลวอร์ด 37 ที่บริการ และให้การดูแลเป็นอย่างดี ไม่มีขาดตกบกพร่อง คะแนนบริการเต็ม 100 คะแนนไม่หัก จากคนไข้ ห้อง 3707 ใช้บริการวันที่ 26 ออกโรงพยาบาล 29 เป็นกำลังใจให้เจ้าหน้าที่และพยาบาลวอร์ด 37 ทุก...",
+    avatar: "ม"
+  },
+  {
+    name: "Navarat Phonlakarn",
+    rating: 5,
+    date: "7 เดือนที่แล้ว",
+    text: "ที่นี่บริการดีมากค่ะ คุณหมอพี่พยาบาลทุกคนดูแลเอาใจใส่เป็นอย่างดี น้องนนทีขอบคุณครับที่ดูแลอย่างดีทุกครั้งที่มา ผมมาแอดมิทตั้งแต่3เดือนผมก็โตที่โรงพยาบาลเลยครับเพราะป่วยแอดมิททุกเดือนจนตอนนี้จะ3ขวบแล้ว😆😆",
+    avatar: "N"
+  },
+  {
+    name: "Parichat Duangpakdee",
+    rating: 5,
+    date: "7 เดือนที่แล้ว",
+    text: "ทางโรงเรียนขอขอบพระคุณทีมวิทยากรจากโรงพยาบาลธนบุรีตรัง ที่ให้เกียรติมาจัดอบรมการปฐมพยาบาลเบื้องต้นแก่คณะครูและเจ้าหน้าที่ของโรงเรียน ความรู้ที่ได้รับประโยชน์อย่างยิ่งต่อการปฏิบัติงาน",
+    avatar: "P"
   },
   {
     name: "Vanessa Fernandes",
@@ -37,18 +58,11 @@ const REVIEWS = [
     avatar: "V"
   },
   {
-    name: "Madeleine Davis",
+    name: "Laura Moggs",
     rating: 5,
-    date: "2025-05-06",
-    text: "Really lovely and welcoming team. I was seen and given treatment incredibly quickly and efficiently. Thank you for making what could be quite a daunting experience very positive!",
-    avatar: "M"
-  },
-  {
-    name: "Rob A.",
-    rating: 5,
-    date: "2025-04-16",
-    text: "Excellent service provided. Good communication and very helpful and friendly staff. Needed wound cleaning and dressing daily and they sorted this liaising with my travel insurer.",
-    avatar: "R"
+    date: "2025-02-25",
+    text: "Probably the best health care experience of my life. Seen very quickly and given exceptional care. The clinic manager Joah was on hand at all times and sat with me whilst my medication was being prepared as I was alone. Couldn’t fault my experience. The loveliest people work here!",
+    avatar: "L"
   },
   {
     name: "Sunesh Smith",
@@ -56,13 +70,6 @@ const REVIEWS = [
     date: "2025-04-02",
     text: "I suffered very bad food poisoning and spent an evening in the clinic. I was very well looked after by the staff and seen to by the doctor quickly. They even helped contact my insurance to settle the bill on the night. Highly recommend!",
     avatar: "S"
-  },
-  {
-    name: "Amelia Kirby",
-    rating: 5,
-    date: "2025-04-02",
-    text: "Kind attentive staff, little to no wait. Clean and professional facility. I was treated as soon as I arrived and they even drove me back to my hotel. They delivered medicine to my hotel later that day. Highly recommend.",
-    avatar: "A"
   }
 ];
 
@@ -950,74 +957,101 @@ export default function Home() {
       </section>
 
       {/* GOOGLE REVIEWS SECTION */}
-      <section className="py-20 px-6 sm:px-12 lg:px-20 bg-warm-white border-t border-border">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-[30%_70%] gap-12 items-center">
-            <div>
-              <div className="text-[10.5px] font-semibold uppercase tracking-[2.5px] text-teal-brand mb-3">
-                Reviews
-              </div>
-              <h2 className="font-serif text-3xl sm:text-4xl text-dark tracking-tight mb-4">
-                {t("revTitle")}
-              </h2>
-              <p className="text-[14px] text-mid leading-relaxed mb-6">
-                {t("revSub")}
-              </p>
-              
-              {/* Google Big Rating Badge */}
-              <div className="bg-cream rounded-2xl p-5 border border-border flex flex-col items-center text-center shadow-sm max-w-[240px]">
-                <span className="text-[13px] font-bold text-dark mb-1">Google Rating</span>
-                <span className="text-4xl font-serif font-black text-teal-brand mb-1">5.0</span>
-                <div className="flex gap-1 mb-2">
-                  <span className="text-amber text-lg">★</span>
-                  <span className="text-amber text-lg">★</span>
-                  <span className="text-amber text-lg">★</span>
-                  <span className="text-amber text-lg">★</span>
-                  <span className="text-amber text-lg">★</span>
-                </div>
-                <span className="text-[11px] text-muted mb-4">Based on 60+ travelers&apos; reviews</span>
-                <a
-                  href="https://search.google.com/local/writereview?placeid=ChIJTX2VL3jBUTARtzm-qlggWDg"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-teal-brand text-white border-0 py-2 px-4 rounded-xl text-[12px] font-semibold hover:bg-teal-dark transition-all cursor-pointer shadow-md decoration-transparent"
-                >
-                  {t("revWriteBtn")}
-                </a>
-              </div>
-            </div>
+      <section className="py-24 bg-cream/35 relative overflow-hidden border-t border-border">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800d_1px,transparent_1px),linear-gradient(to_bottom,#8080800d_1px,transparent_1px)] bg-[size:24px_24px]" />
+        <div className="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-teal-light opacity-50 blur-[100px]" />
 
-            {/* Scrollable horizontal review list */}
-            <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-teal-brand/20">
-              {REVIEWS.map((rev) => (
-                <div key={rev.name} className="min-w-[280px] sm:min-w-[340px] bg-cream rounded-2xl p-6 border border-border flex flex-col justify-between hover:scale-[1.01] transition-transform shadow-sm">
-                  <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-full bg-teal-brand/10 text-teal-brand flex items-center justify-center font-bold text-[14px]">
-                          {rev.avatar}
-                        </div>
-                        <div>
-                          <h4 className="text-[13.5px] font-bold text-dark">{rev.name}</h4>
-                          <span className="text-[10px] text-muted">{rev.date}</span>
-                        </div>
-                      </div>
-                      <div className="flex gap-0.5 text-amber text-[13px]">
-                        {"★".repeat(rev.rating)}
-                      </div>
-                    </div>
-                    <p className="text-[12.5px] leading-relaxed text-mid italic">
-                      &ldquo;{rev.text}&rdquo;
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-1.5 mt-5 text-[10px] text-teal-brand font-semibold">
-                    <span className="w-1.5 h-1.5 rounded-full bg-teal-brand animate-blink" />
-                    <span>Verified Google Review</span>
-                  </div>
-                </div>
-              ))}
+        {/* Header */}
+        <div className="container mx-auto px-4 relative z-10 mb-12 text-center">
+          <span className="text-teal-brand font-bold tracking-wider uppercase text-xs mb-2 block bg-teal-light w-fit mx-auto px-3 py-1 rounded-full border border-teal-mid/10">
+            {language === 'th' ? "รีวิวจากผู้ใช้บริการจริง" : "PATIENT REVIEWS"}
+          </span>
+          <h2 className="text-3xl md:text-5xl font-serif font-bold text-dark leading-tight mb-4">
+            {language === 'th' ? "เสียงยืนยันจาก" : "What Our Patients"}{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-brand to-teal-mid">
+              {language === 'th' ? "ผู้ใช้บริการจริง" : "Say"}
+            </span>
+          </h2>
+
+          {/* Google Rating Badge */}
+          <div className="inline-flex items-center gap-3 bg-white border border-border rounded-2xl px-5 py-3 shadow-sm mt-2">
+            <svg className="w-5 h-5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+            </svg>
+            <div className="flex items-center gap-1.5">
+              <span className="font-extrabold text-gray-900 text-lg leading-none">4.6</span>
+              <div className="flex gap-0.5">
+                {[1, 2, 3, 4, 5].map(i => (
+                  <span key={i} className="text-amber text-lg leading-none">★</span>
+                ))}
+              </div>
+              <span className="text-gray-400 text-sm">(377)</span>
             </div>
           </div>
+        </div>
+
+        {/* Marquee Container */}
+        <div className="relative w-full overflow-hidden">
+          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-warm-white via-warm-white/40 to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-warm-white via-warm-white/40 to-transparent z-10 pointer-events-none" />
+          
+          <div className="flex w-max animate-marquee hover:[animation-play-state:paused] gap-6 py-4">
+            {[...REVIEWS, ...REVIEWS, ...REVIEWS].map((rev, index) => (
+              <div
+                key={`${rev.name}-${index}`}
+                className="w-[340px] md:w-[380px] flex-shrink-0 bg-white rounded-2xl p-6 border border-border flex flex-col justify-between hover:scale-[1.01] transition-all duration-300 shadow-sm hover:shadow-md"
+              >
+                <div>
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="flex items-center gap-3">
+                      <div className="w-11 h-11 rounded-full overflow-hidden bg-teal-brand/10 text-teal-brand flex items-center justify-center font-bold text-[15px] border border-border">
+                        {rev.avatar}
+                      </div>
+                      <div>
+                        <h4 className="text-[13.5px] font-bold text-dark leading-tight">{rev.name}</h4>
+                        <span className="text-[10px] text-muted">{rev.date}</span>
+                      </div>
+                    </div>
+                    {/* Google Icon badge */}
+                    <svg className="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                      <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                      <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                      <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                    </svg>
+                  </div>
+                  <div className="flex gap-0.5 text-amber text-[13px] mb-3">
+                    {"★".repeat(rev.rating)}
+                  </div>
+                  <p className="text-[12.5px] leading-relaxed text-mid line-clamp-4">
+                    &ldquo;{rev.text}&rdquo;
+                  </p>
+                </div>
+                <div className="flex items-center gap-1.5 mt-5 text-[10px] text-teal-brand font-semibold">
+                  <span className="w-1.5 h-1.5 rounded-full bg-teal-brand animate-blink" />
+                  <span>Verified Google Review</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* View All Button */}
+        <div className="text-center mt-10 relative z-10">
+          <a
+            href="https://search.google.com/local/reviews?placeid=ChIJTX2VL3jBUTARtzm-qlggWDg"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-[12.5px] font-semibold text-mid hover:text-teal-brand transition-colors group px-6 py-3 rounded-full bg-white border border-border shadow-sm hover:shadow hover:border-teal-brand/20 decoration-transparent"
+          >
+            <span>{language === 'th' ? "ดูรีวิวทั้งหมดบน Google" : "View All Google Reviews"}</span>
+            <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
         </div>
       </section>
 
