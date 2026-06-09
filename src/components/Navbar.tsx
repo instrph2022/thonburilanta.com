@@ -26,20 +26,12 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-[200] h-16 bg-cream/95 backdrop-blur-[16px] border-bottom border-border select-none flex items-center justify-between px-6 lg:px-12 transition-all">
       <div className="w-full flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group decoration-transparent">
-          <div className="w-9 h-9 bg-teal-brand text-white rounded-lg flex items-center justify-center p-2 group-hover:scale-105 transition-transform">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-amber">
-              <path d="M12 5v14M5 12h14" />
-            </svg>
-          </div>
-          <div className="flex flex-col leading-none">
-            <span className="font-serif text-[14px] font-semibold text-dark tracking-tight">
-              Thonburi Lanta
-            </span>
-            <span className="font-sans text-[10px] text-muted">
-              คลินิกธนบุรีลันตา
-            </span>
-          </div>
+        <Link href="/" className="flex items-center group decoration-transparent">
+          <img 
+            src="/logo-horizontal.png" 
+            alt="Thonburi Lanta Clinic" 
+            className="h-10 w-auto group-hover:scale-[1.01] transition-transform" 
+          />
         </Link>
 
         {/* Desktop nav links */}

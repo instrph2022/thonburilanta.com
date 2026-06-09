@@ -14,19 +14,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-10">
           {/* Brand Info */}
           <div className="flex flex-col gap-3">
-            <Link href="/" className="flex items-center gap-2 group decoration-transparent">
-              <div className="w-8 h-8 bg-teal-brand text-white rounded-lg flex items-center justify-center p-1.5">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-amber">
-                  <path d="M12 5v14M5 12h14" />
-                </svg>
-              </div>
-              <div className="flex flex-col leading-none">
-                <span className="font-serif text-[15px] font-semibold text-white tracking-tight">
-                  Thonburi Lanta
-                </span>
-                <span className="font-sans text-[9px] text-white/40">
-                  คลินิกธนบุรีลันตา
-                </span>
+            <Link href="/" className="flex items-center group decoration-transparent">
+              <div className="bg-white p-2 rounded-lg inline-block">
+                <img 
+                  src="/logo-horizontal.png" 
+                  alt="Thonburi Lanta Clinic" 
+                  className="h-8 w-auto group-hover:scale-[1.01] transition-transform" 
+                />
               </div>
             </Link>
             <p className="text-[12px] leading-relaxed text-white/50 max-w-[280px] mt-2">
