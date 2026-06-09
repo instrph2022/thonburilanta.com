@@ -843,20 +843,30 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="bg-teal-light/40 rounded-2xl h-[420px] flex flex-col items-center justify-center gap-4 text-teal-dark border border-teal-brand/10 p-6 shadow-inner select-none relative overflow-hidden">
-            {/* Real OpenStreetMap fallback/mock style design */}
-            <div className="absolute inset-0 bg-cover bg-center opacity-25" style={{ backgroundImage: `url('https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/100.2,7.6,12/420x420?access_token=placeholder')` }} />
-            <Compass className="w-14 h-14 text-teal-brand animate-spin" style={{ animationDuration: "12s" }} />
-            <span className="font-serif text-lg font-semibold z-10 text-dark">Thonburi Lanta Hospital</span>
-            <span className="text-[12px] text-muted tracking-wide text-center z-10 max-w-[280px]">Saladan Sub-district, Ko Lanta District, Krabi 81150</span>
-            <a
-              href="https://maps.google.com/?q=Koh+Lanta"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-4 bg-teal-brand text-white border-0 py-2.5 px-5 rounded-lg text-[12px] font-semibold hover:bg-teal-dark transition-all shadow-md z-10 cursor-pointer decoration-transparent"
-            >
-              Open in Google Maps
-            </a>
+          <div className="bg-white rounded-2xl h-[420px] overflow-hidden border border-border shadow-sm relative">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.8260381648057!2d99.03080757574744!3d7.260580914275141!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3051e7cc4d830b49%3A0xe54d9c49007f354f!2z4LmC4Lij4LiH4Lie4Lii4Liy4Lia4Liy4Lil4LiY4LiZ4Li44Lia4Lix4LiZ4LmC4Lil4Liw4LmC4LiB4LmH!5e0!3m2!1sth!2sth!4v1716942000000!5m2!1sth!2sth"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+            <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur p-4 rounded-xl shadow-md border border-border flex items-center justify-between gap-4">
+              <div>
+                <span className="font-serif text-[13.5px] font-bold text-dark block leading-tight">Thonburi Lanta Clinic</span>
+                <span className="text-[10px] text-muted block mt-0.5">Saladan, Ko Lanta, Krabi 81150</span>
+              </div>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Thonburi+Lanta+Hospital"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-teal-brand text-white border-0 py-2 px-3.5 rounded-lg text-[11px] font-semibold hover:bg-teal-dark transition-all shadow-sm cursor-pointer decoration-transparent whitespace-nowrap"
+              >
+                Open in Maps
+              </a>
+            </div>
           </div>
         </div>
       </section>
