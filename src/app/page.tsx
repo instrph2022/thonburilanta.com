@@ -243,10 +243,14 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3 bg-amber-light/70 rounded-xl p-3 border border-amber/10">
-                  <Award className="w-4 h-4 text-amber mt-0.5 shrink-0" />
+                <div className="flex items-center gap-4 bg-amber-light/30 rounded-xl p-3 border border-amber/15">
+                  <img 
+                    src="/logo-aaci.png" 
+                    alt="AACI Quality & Patient Safety" 
+                    className="w-12 h-12 object-contain shrink-0" 
+                  />
                   <div className="flex-1">
-                    <span className="text-[10px] font-bold text-amber-light text-dark uppercase tracking-wider block">AACI Certification</span>
+                    <span className="text-[10px] font-bold text-amber uppercase tracking-wider block">AACI Certification</span>
                     <span className="text-[12.5px] font-bold text-dark block mt-0.5">Accredited Ambulatory Facility</span>
                     <span className="text-[10px] text-mid block mt-0.5">International safety and quality standards audited under US guidelines.</span>
                   </div>
