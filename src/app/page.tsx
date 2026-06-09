@@ -67,7 +67,7 @@ const REVIEWS = [
 ];
 
 export default function Home() {
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
   const [searchQuery, setSearchQuery] = useState("");
 
   const filteredInsurances = searchQuery.trim() === ""
@@ -98,12 +98,86 @@ export default function Home() {
     "medicalSpecialty": ["Emergency Medicine", "General Practice", "Dive Medicine"]
   };
 
+  const faqData = {
+    en: [
+      {
+        q: "Is there a medical clinic on Koh Lanta?",
+        a: "Yes, Thonburi Lanta Clinic is Koh Lanta's premium medical clinic. It is open 24 hours a day for emergency contact and is located in the Saladan area, Koh Lanta, Krabi.",
+      },
+      {
+        q: "What should I do if I get injured while diving in Koh Lanta?",
+        a: "Go directly to Thonburi Lanta Clinic. We have dive medicine specialists available to consult on decompression sickness (DCS), pressure injuries, and marine wildlife stings, plus first-aid oxygen support.",
+      },
+      {
+        q: "Does Koh Lanta have emergency care?",
+        a: "Yes, Thonburi Lanta Clinic features a fully equipped Emergency Room (ER) open 24/7 for urgent clinical care and ambulance support. Walk-ins are welcome; no appointment is necessary for ER.",
+      },
+      {
+        q: "Can I use international health insurance at Thonburi Lanta Clinic?",
+        a: "Yes, we accept major international travel and health insurance (such as Allianz, AXA, Europ Assistance, and DAN). We provide English medical certificates, itemized bills, and direct-billing support (GOP processing).",
+      },
+      {
+        q: "Is there an English-speaking doctor in Koh Lanta?",
+        a: "Yes, all medical doctors, specialists, and nurses at Thonburi Lanta Clinic are fluent in English. We regularly treat expats, international tourists, and resort guests.",
+      },
+      {
+        q: "What is the nearest clinic to Koh Lanta?",
+        a: "Thonburi Lanta Clinic is located directly on Koh Lanta island (Krabi). You no longer need to travel to Krabi Town or Trang for outpatient clinical services or 24/7 emergency response.",
+      },
+    ],
+    th: [
+      {
+        q: "คลินิกการแพทย์ในเกาะลันตามีไหม?",
+        a: "มีครับ คลินิกธนบุรีลันตา เป็นคลินิกการแพทย์ครบวงจรแห่งแรกบนเกาะลันตา เปิดให้บริการตลอด 24 ชั่วโมงสำหรับการประสานงานฉุกเฉิน ตั้งอยู่ในย่านศาลาด่าน อำเภอเกาะลันตา จังหวัดกระบี่",
+      },
+      {
+        q: "หากได้รับบาดเจ็บจากการดำน้ำที่เกาะลันตา ควรทำอย่างไร?",
+        a: "เดินทางมาที่คลินิกธนบุรีลันตาได้ทันที เรามีแพทย์ผู้เชี่ยวชาญด้านเวชศาสตร์ใต้น้ำ (Dive Medicine) พร้อมให้คำปรึกษาดูแลรักษาภาวะโรคน้ำหนีบ (Decompression Sickness - DCS) และอุบัติเหตุจากการดำน้ำทุกประเภท",
+      },
+      {
+        q: "เกาะลันตามีห้องฉุกเฉินหรือบริการผู้ป่วยอุบัติเหตุไหม?",
+        a: "มีครับ คลินิกธนบุรีลันตาเปิดให้บริการแผนกฉุกเฉินและอุบัติเหตุ (ER) ตลอด 24 ชั่วโมง ทุกวัน พร้อมรถพยาบาลฉุกเฉินรับส่งผู้ป่วยกรณีเร่งด่วน โดยไม่ต้องนัดหมายล่วงหน้า",
+      },
+      {
+        q: "สามารถใช้ประกันสุขภาพต่างประเทศที่คลินิกธนบุรีลันตาได้หรือไม่?",
+        a: "ได้ครับ เรายินดีรับประกันภัยการเดินทางและประกันสุขภาพต่างประเทศชั้นนำเกือบทุกบริษัท โดยมีทีมงานช่วยประสานงานเคลมตรง (Direct Billing) ออกใบรับรองแพทย์และเอกสารสรุปประวัติเป็นภาษาอังกฤษเพื่อความสะดวกในการเคลมเคลียร์ค่าใช้จ่าย",
+      },
+      {
+        q: "มีหมอที่สื่อสารภาษาอังกฤษบนเกาะลันตาไหม?",
+        a: "มีครับ แพทย์และพยาบาลวิชาชีพของคลินิกธนบุรีลันตาสามารถสื่อสารภาษาอังกฤษได้อย่างคล่องแคล่ว พร้อมให้การดูแลนักท่องเที่ยวชาวต่างชาติและ Expat ที่พำนักระยะยาวบนเกาะอย่างเข้าใจละเอียด",
+      },
+      {
+        q: "คลินิกที่ใกล้ที่สุดบนเกาะลันตาคือที่ไหน?",
+        a: "คลินิกธนบุรีลันตา ตั้งอยู่บนเกาะลันตาโดยตรง ช่วยให้ผู้ป่วยไม่ต้องเดินทางข้ามเรือไปรักษาตัวที่ตัวเมืองกระบี่หรือตรังสำหรับอาการป่วยไข้ทั่วไปและการตรวจรักษาผู้ป่วยนอก",
+      },
+    ],
+  };
+
+  const currentFaqs = faqData[language] || faqData.en;
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": currentFaqs.map((faq) => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a,
+      },
+    })),
+  };
+
   return (
     <>
       {/* Schema.org structured data */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
       {/* HERO SECTION */}
