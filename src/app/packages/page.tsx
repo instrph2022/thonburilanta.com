@@ -8,6 +8,8 @@ import { Check, Info, ArrowLeft, Star, Shield, Heart, Activity } from "lucide-re
 export default function PackagesPage() {
   const { language, t } = useLanguage();
 
+  const [activeImage, setActiveImage] = React.useState<string | null>(null);
+
   const packagesList = [
     {
       id: "std_testing",
@@ -108,14 +110,22 @@ export default function PackagesPage() {
               }`}
             >
               <div>
-                {/* Package image */}
+                {/* Package image with Lightbox click trigger */}
                 {pkg.imageUrl && (
-                  <div className="w-[calc(100%+3.5rem)] h-40 object-cover -mt-7 -mx-7 mb-5 overflow-hidden relative rounded-t-2xl">
+                  <div 
+                    onClick={() => setActiveImage(pkg.imageUrl)}
+                    className="w-[calc(100%+3.5rem)] -mt-7 -mx-7 mb-5 overflow-hidden relative rounded-t-2xl cursor-zoom-in group aspect-[16/10] bg-black/5"
+                  >
                     <img 
                       src={pkg.imageUrl} 
                       alt={pkg.title} 
-                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" 
+                      className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105" 
                     />
+                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <span className="bg-white/90 text-dark px-3 py-1.5 rounded-full text-[11px] font-bold shadow-md">
+                        {language === "en" ? "🔍 Zoom Image" : "🔍 ขยายรูปภาพ"}
+                      </span>
+                    </div>
                   </div>
                 )}
 
@@ -204,6 +214,28 @@ export default function PackagesPage() {
           ))}
         </div>
       </div>
+
+      {/* Lightbox Modal Component */}
+      {activeImage && (
+        <div 
+          className="fixed inset-0 bg-dark/90 z-50 flex items-center justify-center p-4 backdrop-blur-sm animate-fade-in"
+          onClick={() => setActiveImage(null)}
+        >
+          <div className="absolute top-4 right-4 text-white text-3xl font-normal cursor-pointer select-none bg-black/40 hover:bg-black/70 w-12 h-12 rounded-full flex items-center justify-center transition-colors">
+            ✕
+          </div>
+          <div 
+            className="max-w-5xl max-h-[90vh] w-full flex items-center justify-center overflow-hidden rounded-xl shadow-2xl relative"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img 
+              src={activeImage} 
+              alt="Healthcare Program Detail Banner" 
+              className="max-w-full max-h-[85vh] object-contain rounded-lg animate-scale-up" 
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 }

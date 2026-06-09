@@ -81,6 +81,7 @@ export default function Home() {
   const [googleReviews, setGoogleReviews] = useState<ReviewItem[]>(REVIEWS);
   const [googleRating, setGoogleRating] = useState("5.0");
   const [googleTotalReviews, setGoogleTotalReviews] = useState("60+");
+  const [activeImage, setActiveImage] = useState<string | null>(null);
 
   useEffect(() => {
     async function getReviews() {
@@ -721,7 +722,21 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Package 1 */}
             <div className="bg-teal-brand border border-teal-brand rounded-2xl p-6.5 text-white flex flex-col hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300 overflow-hidden">
-              <img src="/pkg-std-testing.webp" alt="Confidential STD/STI Testing" className="w-[calc(100%+3.25rem)] h-36 object-cover -mt-6.5 -mx-6.5 mb-5 opacity-95 hover:scale-105 transition-transform duration-500" />
+              <div 
+                onClick={() => setActiveImage("/pkg-std-testing.webp")}
+                className="w-[calc(100%+3.25rem)] -mt-6.5 -mx-6.5 mb-5 overflow-hidden relative rounded-t-2xl cursor-zoom-in group aspect-[16/10] bg-black/5"
+              >
+                <img 
+                  src="/pkg-std-testing.webp" 
+                  alt="Confidential STD/STI Testing" 
+                  className="w-full h-full object-cover object-center opacity-95 transition-transform duration-500 group-hover:scale-105" 
+                />
+                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <span className="bg-white/90 text-dark px-3 py-1 rounded-full text-[10px] font-bold shadow-md">
+                    {language === "en" ? "🔍 Zoom" : "🔍 ขยายภาพ"}
+                  </span>
+                </div>
+              </div>
               <span className="text-[9.5px] bg-white/20 text-white font-bold uppercase tracking-wider px-2 py-1 rounded-full w-fit mb-4">
                 {language === 'th' ? "ตรวจหาเชื้อแบบรักษาความลับ" : "Confidential Testing"}
               </span>
@@ -750,7 +765,21 @@ export default function Home() {
 
             {/* Package 2 */}
             <div className="bg-white border border-border rounded-2xl p-6.5 flex flex-col hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300 overflow-hidden">
-              <img src="/pkg-dengue-vaccine.webp" alt="Dengue Fever Vaccines" className="w-[calc(100%+3.25rem)] h-36 object-cover -mt-6.5 -mx-6.5 mb-5 hover:scale-105 transition-transform duration-500" />
+              <div 
+                onClick={() => setActiveImage("/pkg-dengue-vaccine.webp")}
+                className="w-[calc(100%+3.25rem)] -mt-6.5 -mx-6.5 mb-5 overflow-hidden relative rounded-t-2xl cursor-zoom-in group aspect-[16/10] bg-black/5"
+              >
+                <img 
+                  src="/pkg-dengue-vaccine.webp" 
+                  alt="Dengue Fever Vaccines" 
+                  className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105" 
+                />
+                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <span className="bg-white/90 text-dark px-3 py-1 rounded-full text-[10px] font-bold shadow-md">
+                    {language === "en" ? "🔍 Zoom" : "🔍 ขยายภาพ"}
+                  </span>
+                </div>
+              </div>
               <span className="text-[9.5px] bg-teal-light text-teal-dark font-bold uppercase tracking-wider px-2 py-1 rounded-full w-fit mb-4">
                 {language === 'th' ? "วัคซีนป้องกันโรค" : "Preventive Vaccines"}
               </span>
@@ -779,7 +808,21 @@ export default function Home() {
 
             {/* Package 3 */}
             <div className="bg-white border border-border rounded-2xl p-6.5 flex flex-col hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300 overflow-hidden">
-              <img src="/pkg-annual-vitality.webp" alt="Annual Vitality Checkup" className="w-[calc(100%+3.25rem)] h-36 object-cover -mt-6.5 -mx-6.5 mb-5 hover:scale-105 transition-transform duration-500" />
+              <div 
+                onClick={() => setActiveImage("/pkg-annual-vitality.webp")}
+                className="w-[calc(100%+3.25rem)] -mt-6.5 -mx-6.5 mb-5 overflow-hidden relative rounded-t-2xl cursor-zoom-in group aspect-[16/10] bg-black/5"
+              >
+                <img 
+                  src="/pkg-annual-vitality.webp" 
+                  alt="Annual Vitality Checkup" 
+                  className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105" 
+                />
+                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <span className="bg-white/90 text-dark px-3 py-1 rounded-full text-[10px] font-bold shadow-md">
+                    {language === "en" ? "🔍 Zoom" : "🔍 ขยายภาพ"}
+                  </span>
+                </div>
+              </div>
               <span className="text-[9.5px] bg-amber-light text-amber font-bold uppercase tracking-wider px-2 py-1 rounded-full w-fit mb-4">
                 {language === 'th' ? "ตรวจสุขภาพประจำปี" : "Health Checkup"}
               </span>
@@ -807,6 +850,28 @@ export default function Home() {
             </div>
           </div>
         </div>
+
+        {/* Lightbox Modal Component */}
+        {activeImage && (
+          <div 
+            className="fixed inset-0 bg-dark/90 z-50 flex items-center justify-center p-4 backdrop-blur-sm animate-fade-in"
+            onClick={() => setActiveImage(null)}
+          >
+            <div className="absolute top-4 right-4 text-white text-3xl font-normal cursor-pointer select-none bg-black/40 hover:bg-black/70 w-12 h-12 rounded-full flex items-center justify-center transition-colors">
+              ✕
+            </div>
+            <div 
+              className="max-w-5xl max-h-[90vh] w-full flex items-center justify-center overflow-hidden rounded-xl shadow-2xl relative"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img 
+                src={activeImage} 
+                alt="Healthcare Program Detail Banner" 
+                className="max-w-full max-h-[85vh] object-contain rounded-lg animate-scale-up" 
+              />
+            </div>
+          </div>
+        )}
       </section>
 
       {/* TRAVEL CHECKLIST SECTION */}
