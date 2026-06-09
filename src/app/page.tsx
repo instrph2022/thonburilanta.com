@@ -525,8 +525,8 @@ export default function Home() {
                 <Activity className="w-5 h-5 text-teal-brand" />
               </div>
               <div>
-                <h4 className="text-[15px] font-semibold text-dark mb-1.5">OPD & ER 24hr</h4>
-                <p className="text-[12.5px] text-mid leading-relaxed">Emergency ambulance transfer, trauma response, and walk-in outpatient consultations anytime.</p>
+                <h4 className="text-[15px] font-semibold text-dark mb-1.5">24/7 On-Call Emergency & OPD</h4>
+                <p className="text-[12.5px] text-mid leading-relaxed">Emergency ambulance transfer, trauma response, and on-call medical consultations anytime.</p>
               </div>
             </div>
             <div className="flex gap-4">
@@ -561,8 +561,8 @@ export default function Home() {
                 <Search className="w-5 h-5 text-teal-brand" />
               </div>
               <div>
-                <h4 className="text-[15px] font-semibold text-dark mb-1.5">Lab & Diagnostics</h4>
-                <p className="text-[12.5px] text-mid leading-relaxed">Fully equipped on-site diagnostic lab, biochemistry testing, and fast reports.</p>
+                <h4 className="text-[15px] font-semibold text-dark mb-1.5">Travel Medicine & Insurance</h4>
+                <p className="text-[12.5px] text-mid leading-relaxed">Traveler health consulting, vaccine guidelines, and direct billing coordination with international insurers.</p>
               </div>
             </div>
             <div className="flex gap-4">
@@ -570,8 +570,8 @@ export default function Home() {
                 <Heart className="w-5 h-5 text-teal-brand" />
               </div>
               <div>
-                <h4 className="text-[15px] font-semibold text-dark mb-1.5">24h Pharmacy</h4>
-                <p className="text-[12.5px] text-mid leading-relaxed">Certified pharmacist on duty, providing essential medicines and travel clinic prescriptions.</p>
+                <h4 className="text-[15px] font-semibold text-dark mb-1.5">On-Site Pharmacy Services</h4>
+                <p className="text-[12.5px] text-mid leading-relaxed">Certified pharmacy services on-site, providing essential medicines and travel clinic prescriptions.</p>
               </div>
             </div>
           </div>
