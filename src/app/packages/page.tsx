@@ -3,127 +3,69 @@
 import React from "react";
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
-import { Check, Info, ArrowLeft, Star, Shield, Compass, Heart, Activity, Award, Users } from "lucide-react";
+import { Check, Info, ArrowLeft, Star, Shield, Heart, Activity } from "lucide-react";
 
 export default function PackagesPage() {
   const { language, t } = useLanguage();
 
   const packagesList = [
     {
-      id: "dive_safety",
+      id: "std_testing",
       isHero: true,
-      tag: language === "en" ? "Hero Package" : "แพ็กเกจยอดนิยม",
-      icon: "🤿",
-      title: t("pkgDiveTitle"),
-      tagline: t("pkgDiveSub"),
-      price: t("pkgDivePrice"),
-      priceSub: t("pkgDivePriceSub"),
-      items: [
-        t("pkgDiveItem1"),
-        t("pkgDiveItem2"),
-        t("pkgDiveItem3"),
-        t("pkgDiveItem4"),
-        language === "en" ? "Decompression sickness first aid protocol" : "บริการปฐมพยาบาลเบื้องต้นจากโรค DCS",
-      ],
-      target: language === "en" ? "Divers, instructors, liveaboard crew" : "นักดำน้ำ ครูสอนดำน้ำ และลูกเรือดำน้ำ",
-      aeo: "dive medical check koh lanta, fitness to dive certificate thailand",
-    },
-    {
-      id: "island_care",
-      isHero: false,
-      tag: t("pkgIslandTag"),
+      tag: language === "en" ? "Confidential Testing" : "ตรวจหาเชื้อแบบรักษาความลับ",
       icon: "🩺",
-      title: t("pkgIslandTitle"),
-      tagline: t("pkgIslandSub"),
-      price: t("pkgIslandPrice"),
-      priceSub: t("pkgIslandPriceSub"),
+      title: language === "en" ? "Confidential STD/STI Testing" : "ตรวจความลับกามโรค STD/STI",
+      tagline: language === "en" ? "Fast results, 100% private, walk-ins welcome" : "ผลตรวจรวดเร็ว เป็นส่วนตัว 100% และรับผู้ป่วย Walk-In",
+      price: language === "en" ? "Contact Us" : "ติดต่อสอบถาม",
+      priceSub: language === "en" ? "For current rates and testing options" : "เพื่อรับข้อมูลราคาโปรแกรมล่าสุด",
       items: [
-        t("pkgIslandItem1"),
-        t("pkgIslandItem2"),
-        t("pkgIslandItem3"),
-        t("pkgIslandItem4"),
-        language === "en" ? "Pain relief medication package included" : "รวมค่ายาระงับปวดมาตรฐาน",
+        language === "en" ? "Fast and highly accurate results" : "รายงานผลตรวจรวดเร็วและแม่นยำสูง",
+        language === "en" ? "100% private and confidential consultation" : "การปรึกษาและเก็บรักษาความลับผู้ป่วย 100%",
+        language === "en" ? "Walk-ins are welcome anytime" : "ยินดีรับผู้ป่วย Walk-in ทุกช่วงเวลาทำการ",
+        language === "en" ? "Detailed medical report in English" : "ออกรายงานการตรวจสุขภาพเป็นภาษาอังกฤษ",
       ],
-      target: language === "en" ? "General tourists, backpackers, expats" : "นักท่องเที่ยวทั่วไป แบ็คแพ็คเกอร์ และชาวต่างชาติ",
-      aeo: "jellyfish sting treatment koh lanta, travel clinic koh lanta",
+      target: language === "en" ? "Tourists, active travelers, expats" : "นักท่องเที่ยว ผู้ที่เดินทาง หรือชาวต่างชาติ",
+      aeo: "std testing koh lanta, sti test thailand, confidential clinic koh lanta",
+      imageUrl: "/pkg-std-testing.webp"
     },
     {
-      id: "lanta_basic",
+      id: "dengue_vaccine",
       isHero: false,
-      tag: language === "en" ? "Annual Basic" : "ตรวจสุขภาพพื้นฐานรายปี",
+      tag: language === "en" ? "Preventive Vaccines" : "วัคซีนป้องกันโรค",
+      icon: "💉",
+      title: language === "en" ? "Dengue Fever Vaccines" : "วัคซีนป้องกันไข้เลือดออก",
+      tagline: language === "en" ? "Protect your loved ones with preventive vaccines" : "ปกป้องคนที่คุณรักด้วยการฉีดวัคซีนป้องกันโรคไข้เลือดออก",
+      price: language === "en" ? "Contact Us" : "ติดต่อสอบถาม",
+      priceSub: language === "en" ? "For pricing and dose schedule details" : "สอบถามรายละเอียดราคาและรอบการฉีดวัคซีน",
+      items: [
+        language === "en" ? "Protects against all 4 strains of dengue virus" : "ป้องกันครอบคลุมไข้เลือดออกทั้ง 4 สายพันธุ์",
+        language === "en" ? "Suitable for individuals aged 4 years and above" : "เหมาะสำหรับผู้มีอายุตั้งแต่ 4 ปีขึ้นไป",
+        language === "en" ? "Reduces hospitalization rate by 90.4%" : "ช่วยลดอัตราการนอนรักษาในโรงพยาบาลได้ถึง 90.4%",
+        language === "en" ? "Reduces severity and complications" : "ช่วยลดความรุนแรงของโรคและภาวะแทรกซ้อน",
+      ],
+      target: language === "en" ? "Families, travelers, long-stay residents" : "ครอบครัว นักท่องเที่ยว หรือผู้พำนักอาศัยระยะยาว",
+      aeo: "dengue vaccine koh lanta, health clinic thailand, prevent dengue fever",
+      imageUrl: "/pkg-dengue-vaccine.webp"
+    },
+    {
+      id: "annual_vitality",
+      isHero: false,
+      tag: language === "en" ? "Health Checkup" : "ตรวจสุขภาพประจำปี",
       icon: "❤️",
-      title: language === "en" ? "Lanta Check Basic" : "ลันตาเช็ค เบสิก",
-      tagline: language === "en" ? "Essential annual checkup" : "ตรวจคัดกรองเบื้องต้นประจำปี",
-      price: "฿1,290",
-      priceSub: language === "en" ? "per year" : "ต่อปี",
+      title: language === "en" ? "Annual Vitality Check" : "ตรวจสุขภาพประจำปีเพื่อพลังแห่งชีวิต",
+      tagline: language === "en" ? "General and Advance health check programs" : "โปรแกรมตรวจสุขภาพทั่วไปและโปรแกรมตรวจวิเคราะห์ละเอียด",
+      price: language === "en" ? "Contact Us" : "ติดต่อสอบถาม",
+      priceSub: language === "en" ? "For Vitality Programs (1 & 2) pricing" : "สอบถามราคาโปรแกรม Vitality 1 และ 2",
       items: [
-        language === "en" ? "CBC & blood count" : "ตรวจความสมบูรณ์ของเม็ดเลือด CBC",
-        language === "en" ? "Lipid Profile & cholesterol check" : "ตรวจระดับไขมันในเลือด",
-        language === "en" ? "Blood Glucose & diabetes screening" : "ตรวจน้ำตาลในเลือดคัดกรองเบาหวาน",
-        language === "en" ? "Blood pressure & BMI check" : "วัดความดันโลหิตและดัชนีมวลกาย",
-        language === "en" ? "General doctor consultation" : "พบแพทย์ปรึกษารายงานสุขภาพ",
+        language === "en" ? "Complete Blood Count (CBC) & Blood Glucose" : "ตรวจความสมบูรณ์ของเม็ดเลือด (CBC) และระดับน้ำตาล",
+        language === "en" ? "Lipid, Kidney, Liver, and Thyroid functions" : "ตรวจไขมัน การทำงานของไต ตับ และไทรอยด์ฮอร์โมน",
+        language === "en" ? "Physical examination & Check up report book" : "ตรวจร่างกายโดยแพทย์และสมุดรายงานผลการตรวจ",
+        language === "en" ? "Program 1 (General) & Program 2 (Advance)" : "มีให้เลือกทั้งโปรแกรม 1 (ทั่วไป) และโปรแกรม 2 (ละเอียด)",
       ],
-      target: language === "en" ? "Local residents, resort staff" : "คนไทยท้องถิ่น พนักงานรีสอร์ทรายบุคคล",
-      aeo: "ตรวจสุขภาพลันตา",
-    },
-    {
-      id: "lanta_premium",
-      isHero: false,
-      tag: t("pkgHealthTag"),
-      icon: "💖",
-      title: language === "en" ? "Lanta Check Premium" : "ลันตาเช็ค พรีเมียม",
-      tagline: t("pkgHealthSub"),
-      price: t("pkgHealthPrice"),
-      priceSub: t("pkgHealthPriceSub"),
-      items: [
-        t("pkgHealthItem1"),
-        t("pkgHealthItem2"),
-        t("pkgHealthItem3"),
-        t("pkgHealthItem4"),
-        language === "en" ? "Liver, kidney & thyroid panels" : "ตรวจการทำงานของตับ ไต และต่อมไทรอยด์",
-        language === "en" ? "Urine analysis & complete panel" : "ตรวจปัสสาวะและวิเคราะห์สมบูรณ์",
-      ],
-      target: language === "en" ? "Long-stay visitors, senior expats" : "ชาวต่างชาติพำนักระยะยาว กลุ่มผู้สูงอายุ",
-      aeo: "expats health checkup koh lanta, travel clinic krabi",
-    },
-    {
-      id: "resort_wellness",
-      isHero: false,
-      tag: t("pkgResortTag"),
-      icon: "🏢",
-      title: t("pkgResortTitle"),
-      tagline: t("pkgResortSub"),
-      price: t("pkgResortPrice"),
-      priceSub: t("pkgResortPriceSub"),
-      items: [
-        t("pkgResortItem1"),
-        t("pkgResortItem2"),
-        t("pkgResortItem3"),
-        t("pkgResortItem4"),
-        language === "en" ? "Custom staffing packages negotiable" : "สามารถจัดแพ็กเกจตามงบประมาณองค์กรได้",
-      ],
-      target: language === "en" ? "Resort HR managers, dive shop operators" : "ฝ่ายบริหารโรงแรม เจ้าของร้านดำน้ำ/ธุรกิจเกาะลันตา",
-      aeo: "B2B wellness contract koh lanta",
-    },
-    {
-      id: "resort_guest_privilege",
-      isHero: false,
-      tag: language === "en" ? "B2B Referral MOU" : "แพ็กเกจพันธมิตรร้านค้า",
-      icon: "🤝",
-      title: language === "en" ? "Resort Guest Privilege" : "สิทธิ์การรักษากลุ่มรีสอร์ท",
-      tagline: language === "en" ? "Partner referrals only" : "บริการส่งต่อเฉพาะรีสอร์ทคู่สัญญาเท่านั้น",
-      price: "฿1,290",
-      priceSub: language === "en" ? "MOU partner price (not publicly listed)" : "ราคาสมาชิกคู่สัญญา (ไม่แสดงหน้ารายการหลัก)",
-      items: [
-        language === "en" ? "Fast-track OPD queue" : "ช่องทางด่วนพบแพทย์ OPD ทันที",
-        language === "en" ? "English-speaking doctor priority" : "พบทีมแพทย์ผู้เชี่ยวชาญภาษาอังกฤษทันที",
-        language === "en" ? "Travel insurance claim processing assistant" : "มีเจ้าหน้าที่ประสานเอกสารแฟกซ์เคลมประกันฟรี",
-        language === "en" ? "Direct billing (if MOU agreement signed)" : "บริการเคลมตรงไม่ต้องสำรองจ่าย (หากเซ็น MOU)",
-        language === "en" ? "Reports sent directly to resort managers" : "บริการส่งรายงานสุขภาพให้ผู้จัดการรีสอร์ท (หากร้องขอ)",
-      ],
-      target: language === "en" ? "Guests of partner hotels & resorts" : "นักท่องเที่ยวที่พักในรีสอร์ทพันธมิตร",
-      aeo: "resort guest healthcare referrals",
-    },
+      target: language === "en" ? "Expats, long-stay tourists, local residents" : "ชาวต่างชาติ ผู้พำนักอาศัยระยะยาว หรือคนในพื้นที่",
+      aeo: "health checkup koh lanta, wellness screening thailand, body check lanta",
+      imageUrl: "/pkg-annual-vitality.webp"
+    }
   ];
 
   return (
@@ -166,7 +108,17 @@ export default function PackagesPage() {
               }`}
             >
               <div>
-                {/* Header elements */}
+                {/* Package image */}
+                {pkg.imageUrl && (
+                  <div className="w-[calc(100%+3.5rem)] h-40 object-cover -mt-7 -mx-7 mb-5 overflow-hidden relative rounded-t-2xl">
+                    <img 
+                      src={pkg.imageUrl} 
+                      alt={pkg.title} 
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" 
+                    />
+                  </div>
+                )}
+
                 <div className="flex justify-between items-start gap-2 mb-4">
                   <span
                     className={`text-[9.5px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full ${
@@ -181,12 +133,9 @@ export default function PackagesPage() {
                 {(() => {
                   const cn = `w-8 h-8 mb-3 ${pkg.isHero ? "text-white" : "text-teal-brand"}`;
                   switch(pkg.icon) {
-                    case "🤿": return <Compass className={cn} />;
                     case "🩺": return <Heart className={cn} />;
-                    case "❤️": return <Activity className={cn} />;
-                    case "💖": return <Shield className={cn} />;
-                    case "🏢": return <Award className={cn} />;
-                    case "🤝": return <Users className={cn} />;
+                    case "💉": return <Activity className={cn} />;
+                    case "❤️": return <Shield className={cn} />;
                     default: return <Shield className={cn} />;
                   }
                 })()}
@@ -248,9 +197,7 @@ export default function PackagesPage() {
                       : "bg-teal-brand text-white hover:bg-teal-dark"
                   }`}
                 >
-                  {pkg.id === "resort_wellness" || pkg.id === "resort_guest_privilege"
-                    ? t("pkgActionContact")
-                    : t("pkgActionInquire")}
+                  {t("pkgActionContact")}
                 </Link>
               </div>
             </div>

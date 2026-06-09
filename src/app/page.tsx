@@ -718,122 +718,89 @@ export default function Home() {
             {t("pkgDesc")}
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Package 1 */}
             <div className="bg-teal-brand border border-teal-brand rounded-2xl p-6.5 text-white flex flex-col hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300 overflow-hidden">
-              <img src="/hyperbaric.png" alt="Hyperbaric Chamber" className="w-[calc(100%+3.25rem)] h-32 object-cover -mt-6.5 -mx-6.5 mb-5 opacity-90 hover:scale-105 transition-transform duration-500" />
+              <img src="/pkg-std-testing.webp" alt="Confidential STD/STI Testing" className="w-[calc(100%+3.25rem)] h-36 object-cover -mt-6.5 -mx-6.5 mb-5 opacity-95 hover:scale-105 transition-transform duration-500" />
               <span className="text-[9.5px] bg-white/20 text-white font-bold uppercase tracking-wider px-2 py-1 rounded-full w-fit mb-4">
-                {t("pkgDiveTag")}
+                {language === 'th' ? "ตรวจหาเชื้อแบบรักษาความลับ" : "Confidential Testing"}
               </span>
-              <Compass className="w-8 h-8 text-white mb-3" />
+              <Heart className="w-8 h-8 text-white mb-3" />
               <h4 className="font-serif text-[17px] font-semibold mb-1">
-                {t("pkgDiveTitle")}
+                {language === 'th' ? "ตรวจความลับกามโรค STD/STI" : "Confidential STD/STI Testing"}
               </h4>
               <p className="text-[11px] text-white/60 mb-5">
-                {t("pkgDiveSub")}
+                {language === 'th' ? "ผลตรวจรวดเร็ว เป็นส่วนตัว 100% และรับผู้ป่วย Walk-In" : "Fast results, 100% private, walk-ins welcome"}
               </p>
               <div className="mb-5">
-                <div className="font-serif text-2xl font-bold">{t("pkgDivePrice")}</div>
-                <div className="text-[10px] text-white/60 mt-1">{t("pkgDivePriceSub")}</div>
+                <div className="font-serif text-2xl font-bold">{language === 'th' ? "ติดต่อสอบถาม" : "Contact Us"}</div>
+                <div className="text-[10px] text-white/60 mt-1">{language === 'th' ? "เพื่อรับข้อมูลราคาโปรแกรมล่าสุด" : "For current rates and testing options"}</div>
               </div>
               <div className="w-full h-px bg-white/20 mb-4" />
               <ul className="list-none m-0 p-0 flex-1 flex flex-col gap-2.5">
-                <li className="text-[11.5px] text-white/90 flex gap-2"><Check className="w-3.5 h-3.5 text-white/60 shrink-0 mt-0.5" /> {t("pkgDiveItem1")}</li>
-                <li className="text-[11.5px] text-white/90 flex gap-2"><Check className="w-3.5 h-3.5 text-white/60 shrink-0 mt-0.5" /> {t("pkgDiveItem2")}</li>
-                <li className="text-[11.5px] text-white/90 flex gap-2"><Check className="w-3.5 h-3.5 text-white/60 shrink-0 mt-0.5" /> {t("pkgDiveItem3")}</li>
-                <li className="text-[11.5px] text-white/90 flex gap-2"><Check className="w-3.5 h-3.5 text-white/60 shrink-0 mt-0.5" /> {t("pkgDiveItem4")}</li>
+                <li className="text-[11.5px] text-white/90 flex gap-2"><Check className="w-3.5 h-3.5 text-white/60 shrink-0 mt-0.5" /> {language === 'th' ? "รายงานผลตรวจรวดเร็วและแม่นยำสูง" : "Fast and highly accurate results"}</li>
+                <li className="text-[11.5px] text-white/90 flex gap-2"><Check className="w-3.5 h-3.5 text-white/60 shrink-0 mt-0.5" /> {language === 'th' ? "การปรึกษาและเก็บรักษาความลับผู้ป่วย 100%" : "100% private and confidential consultation"}</li>
+                <li className="text-[11.5px] text-white/90 flex gap-2"><Check className="w-3.5 h-3.5 text-white/60 shrink-0 mt-0.5" /> {language === 'th' ? "ยินดีรับผู้ป่วย Walk-in ทุกช่วงเวลาทำการ" : "Walk-ins are welcome anytime"}</li>
               </ul>
               <Link href="#contact-form" className="text-[12px] font-bold text-white hover:underline mt-6 flex items-center justify-between group decoration-transparent">
-                <span>{t("pkgActionInquire")}</span>
+                <span>{t("pkgActionContact")}</span>
                 <span className="group-hover:translate-x-1 transition-transform">→</span>
               </Link>
             </div>
 
             {/* Package 2 */}
             <div className="bg-white border border-border rounded-2xl p-6.5 flex flex-col hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300 overflow-hidden">
-              <img src="/reception.png" alt="Hospital Reception" className="w-[calc(100%+3.25rem)] h-32 object-cover -mt-6.5 -mx-6.5 mb-5 hover:scale-105 transition-transform duration-500" />
+              <img src="/pkg-dengue-vaccine.webp" alt="Dengue Fever Vaccines" className="w-[calc(100%+3.25rem)] h-36 object-cover -mt-6.5 -mx-6.5 mb-5 hover:scale-105 transition-transform duration-500" />
               <span className="text-[9.5px] bg-teal-light text-teal-dark font-bold uppercase tracking-wider px-2 py-1 rounded-full w-fit mb-4">
-                {t("pkgIslandTag")}
+                {language === 'th' ? "วัคซีนป้องกันโรค" : "Preventive Vaccines"}
               </span>
-              <Heart className="w-8 h-8 text-teal-brand mb-3" />
+              <Activity className="w-8 h-8 text-teal-brand mb-3" />
               <h4 className="font-serif text-[17px] font-semibold text-dark mb-1">
-                {t("pkgIslandTitle")}
+                {language === 'th' ? "วัคซีนป้องกันไข้เลือดออก" : "Dengue Fever Vaccines"}
               </h4>
               <p className="text-[11px] text-muted mb-5">
-                {t("pkgIslandSub")}
+                {language === 'th' ? "ปกป้องคนที่คุณรักด้วยการฉีดวัคซีนป้องกันโรคไข้เลือดออก" : "Protect your loved ones with preventive vaccines"}
               </p>
               <div className="mb-5">
-                <div className="font-serif text-2xl font-bold text-ocean">{t("pkgIslandPrice")}</div>
-                <div className="text-[10px] text-muted mt-1">{t("pkgIslandPriceSub")}</div>
+                <div className="font-serif text-2xl font-bold text-ocean">{language === 'th' ? "ติดต่อสอบถาม" : "Contact Us"}</div>
+                <div className="text-[10px] text-muted mt-1">{language === 'th' ? "สอบถามรายละเอียดราคาและรอบการฉีด" : "For pricing and dose details"}</div>
               </div>
               <div className="w-full h-px bg-black/5 mb-4" />
               <ul className="list-none m-0 p-0 flex-1 flex flex-col gap-2.5">
-                <li className="text-[11.5px] text-mid flex gap-2"><Check className="w-3.5 h-3.5 text-teal-brand shrink-0 mt-0.5" /> {t("pkgIslandItem1")}</li>
-                <li className="text-[11.5px] text-mid flex gap-2"><Check className="w-3.5 h-3.5 text-teal-brand shrink-0 mt-0.5" /> {t("pkgIslandItem2")}</li>
-                <li className="text-[11.5px] text-mid flex gap-2"><Check className="w-3.5 h-3.5 text-teal-brand shrink-0 mt-0.5" /> {t("pkgIslandItem3")}</li>
-                <li className="text-[11.5px] text-mid flex gap-2"><Check className="w-3.5 h-3.5 text-teal-brand shrink-0 mt-0.5" /> {t("pkgIslandItem4")}</li>
+                <li className="text-[11.5px] text-mid flex gap-2"><Check className="w-3.5 h-3.5 text-teal-brand shrink-0 mt-0.5" /> {language === 'th' ? "ป้องกันครอบคลุมไข้เลือดออกทั้ง 4 สายพันธุ์" : "Protects against all 4 strains"}</li>
+                <li className="text-[11.5px] text-mid flex gap-2"><Check className="w-3.5 h-3.5 text-teal-brand shrink-0 mt-0.5" /> {language === 'th' ? "เหมาะสำหรับผู้มีอายุตั้งแต่ 4 ปีขึ้นไป" : "Suitable for ages 4 and above"}</li>
+                <li className="text-[11.5px] text-mid flex gap-2"><Check className="w-3.5 h-3.5 text-teal-brand shrink-0 mt-0.5" /> {language === 'th' ? "ช่วยลดอัตราการนอนรักษาในโรงพยาบาลได้ถึง 90.4%" : "Reduces hospitalization by 90.4%"}</li>
               </ul>
               <Link href="#contact-form" className="text-[12px] font-bold text-ocean hover:underline mt-6 flex items-center justify-between group decoration-transparent">
-                <span>{t("pkgActionInquire")}</span>
+                <span>{t("pkgActionContact")}</span>
                 <span className="group-hover:translate-x-1 transition-transform">→</span>
               </Link>
             </div>
 
             {/* Package 3 */}
             <div className="bg-white border border-border rounded-2xl p-6.5 flex flex-col hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300 overflow-hidden">
-              <img src="/ct_scan.png" alt="CT Scan Room" className="w-[calc(100%+3.25rem)] h-32 object-cover -mt-6.5 -mx-6.5 mb-5 hover:scale-105 transition-transform duration-500" />
+              <img src="/pkg-annual-vitality.webp" alt="Annual Vitality Checkup" className="w-[calc(100%+3.25rem)] h-36 object-cover -mt-6.5 -mx-6.5 mb-5 hover:scale-105 transition-transform duration-500" />
               <span className="text-[9.5px] bg-amber-light text-amber font-bold uppercase tracking-wider px-2 py-1 rounded-full w-fit mb-4">
-                {t("pkgHealthTag")}
+                {language === 'th' ? "ตรวจสุขภาพประจำปี" : "Health Checkup"}
               </span>
-              <Activity className="w-8 h-8 text-amber mb-3" />
+              <Shield className="w-8 h-8 text-amber mb-3" />
               <h4 className="font-serif text-[17px] font-semibold text-dark mb-1">
-                {t("pkgHealthTitle")}
+                {language === 'th' ? "ตรวจสุขภาพประจำปีเพื่อพลังแห่งชีวิต" : "Annual Vitality Check"}
               </h4>
               <p className="text-[11px] text-muted mb-5">
-                {t("pkgHealthSub")}
+                {language === 'th' ? "โปรแกรมตรวจสุขภาพทั่วไปและโปรแกรมตรวจวิเคราะห์ละเอียด" : "General and Advance health check programs"}
               </p>
               <div className="mb-5">
-                <div className="font-serif text-2xl font-bold text-amber">{t("pkgHealthPrice")}</div>
-                <div className="text-[10px] text-muted mt-1">{t("pkgHealthPriceSub")}</div>
+                <div className="font-serif text-2xl font-bold text-amber">{language === 'th' ? "ติดต่อสอบถาม" : "Contact Us"}</div>
+                <div className="text-[10px] text-muted mt-1">{language === 'th' ? "สอบถามราคาโปรแกรม Vitality 1 และ 2" : "For Vitality Programs (1 & 2) pricing"}</div>
               </div>
               <div className="w-full h-px bg-black/5 mb-4" />
               <ul className="list-none m-0 p-0 flex-1 flex flex-col gap-2.5">
-                <li className="text-[11.5px] text-mid flex gap-2"><Check className="w-3.5 h-3.5 text-teal-brand shrink-0 mt-0.5" /> {t("pkgHealthItem1")}</li>
-                <li className="text-[11.5px] text-mid flex gap-2"><Check className="w-3.5 h-3.5 text-teal-brand shrink-0 mt-0.5" /> {t("pkgHealthItem2")}</li>
-                <li className="text-[11.5px] text-mid flex gap-2"><Check className="w-3.5 h-3.5 text-teal-brand shrink-0 mt-0.5" /> {t("pkgHealthItem3")}</li>
-                <li className="text-[11.5px] text-mid flex gap-2"><Check className="w-3.5 h-3.5 text-teal-brand shrink-0 mt-0.5" /> {t("pkgHealthItem4")}</li>
+                <li className="text-[11.5px] text-mid flex gap-2"><Check className="w-3.5 h-3.5 text-teal-brand shrink-0 mt-0.5" /> {language === 'th' ? "ตรวจความสมบูรณ์ของเม็ดเลือดและระดับน้ำตาล" : "Complete Blood Count & Glucose"}</li>
+                <li className="text-[11.5px] text-mid flex gap-2"><Check className="w-3.5 h-3.5 text-teal-brand shrink-0 mt-0.5" /> {language === 'th' ? "ตรวจไขมัน ตับ ไต และฮอร์โมนไทรอยด์" : "Kidney, Liver, and Thyroid checks"}</li>
+                <li className="text-[11.5px] text-mid flex gap-2"><Check className="w-3.5 h-3.5 text-teal-brand shrink-0 mt-0.5" /> {language === 'th' ? "ตรวจร่างกายโดยแพทย์และสมุดรายงานผล" : "Doctor checkup & report booklet"}</li>
               </ul>
               <Link href="#contact-form" className="text-[12px] font-bold text-amber hover:underline mt-6 flex items-center justify-between group decoration-transparent">
-                <span>{t("pkgActionInquire")}</span>
-                <span className="group-hover:translate-x-1 transition-transform">→</span>
-              </Link>
-            </div>
-
-            {/* Package 4 */}
-            <div className="bg-white border border-border rounded-2xl p-6.5 flex flex-col hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300 overflow-hidden">
-              <img src="/hospital_exterior.jpg" alt="Thonburi Lanta Hospital" className="w-[calc(100%+3.25rem)] h-32 object-cover -mt-6.5 -mx-6.5 mb-5 hover:scale-105 transition-transform duration-500" />
-              <span className="text-[9.5px] bg-black/5 text-mid font-bold uppercase tracking-wider px-2 py-1 rounded-full w-fit mb-4">
-                {t("pkgResortTag")}
-              </span>
-              <Award className="w-8 h-8 text-dark mb-3 animate-pulse" />
-              <h4 className="font-serif text-[17px] font-semibold text-dark mb-1">
-                {t("pkgResortTitle")}
-              </h4>
-              <p className="text-[11px] text-muted mb-5">
-                {t("pkgResortSub")}
-              </p>
-              <div className="mb-5">
-                <div className="font-serif text-2xl font-bold text-dark">{t("pkgResortPrice")}</div>
-                <div className="text-[10px] text-muted mt-1">{t("pkgResortPriceSub")}</div>
-              </div>
-              <div className="w-full h-px bg-black/5 mb-4" />
-              <ul className="list-none m-0 p-0 flex-1 flex flex-col gap-2.5">
-                <li className="text-[11.5px] text-mid flex gap-2"><Check className="w-3.5 h-3.5 text-teal-brand shrink-0 mt-0.5" /> {t("pkgResortItem1")}</li>
-                <li className="text-[11.5px] text-mid flex gap-2"><Check className="w-3.5 h-3.5 text-teal-brand shrink-0 mt-0.5" /> {t("pkgResortItem2")}</li>
-                <li className="text-[11.5px] text-mid flex gap-2"><Check className="w-3.5 h-3.5 text-teal-brand shrink-0 mt-0.5" /> {t("pkgResortItem3")}</li>
-                <li className="text-[11.5px] text-mid flex gap-2"><Check className="w-3.5 h-3.5 text-teal-brand shrink-0 mt-0.5" /> {t("pkgResortItem4")}</li>
-              </ul>
-              <Link href="#contact-form" className="text-[12px] font-bold text-dark hover:underline mt-6 flex items-center justify-between group decoration-transparent">
                 <span>{t("pkgActionContact")}</span>
                 <span className="group-hover:translate-x-1 transition-transform">→</span>
               </Link>
