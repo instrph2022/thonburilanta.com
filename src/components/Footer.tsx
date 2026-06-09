@@ -25,7 +25,7 @@ export default function Footer() {
                   Thonburi Lanta
                 </span>
                 <span className="font-sans text-[9px] text-white/40">
-                  โรงพยาบาลธนบุรีลันตา
+                  คลินิกธนบุรีลันตา
                 </span>
               </div>
             </Link>
@@ -61,7 +61,7 @@ export default function Footer() {
           {/* Clinical Links */}
           <div className="flex flex-col">
             <h5 className="text-[10px] tracking-[1.5px] uppercase text-white/40 font-bold mb-4">
-              Hospital
+              Clinic
             </h5>
             <div className="flex flex-col gap-2">
               <Link href="/#doctors" className="text-[12.5px] text-white/50 hover:text-white transition-colors decoration-transparent">

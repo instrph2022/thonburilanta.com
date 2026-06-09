@@ -25,17 +25,17 @@ const translations = {
     // Hero
     heroBadgeEnglish: "Multilingual Clinical Team",
     heroBadgeInsurance: "Direct Billing Support",
-    heroBadgeFamily: "AACI Accredited Hospital",
+    heroBadgeFamily: "AACI Accredited Clinic",
     heroEyebrow: "Thonburi Healthcare Group",
     heroTitleHtml: "Standard Medical Services<br/>on Koh Lanta Island",
-    heroSub: "A modern 36-bed facility offering 24/7 emergency response, pediatric consultations, and international insurance coordination under the standards of Thonburi Healthcare Group.",
+    heroSub: "A modern medical clinic offering 24/7 emergency response contact, pediatric consultations, and international insurance coordination under the standards of Thonburi Healthcare Group.",
     heroErLabel: "EMERGENCY · 24 HOURS",
     heroErPhone: "081-569-7890",
     heroErNote: "Walk in directly · No appointment required",
     heroBtnPackages: "Medical Packages",
     heroBtnDoctors: "Our Medical Team",
-    heroStatBeds: "Inpatient beds",
-    heroStatEr: "Emergency care",
+    heroStatBeds: "Outpatient care",
+    heroStatEr: "Emergency contact",
     heroStatLang: "English speaking",
     heroStatGroup: "THG Network",
 
@@ -69,7 +69,7 @@ const translations = {
     expectStep3Desc: "On-site diagnostic lab, digital imaging, and pharmacy ensure most visits are resolved in one stop.",
     expectStep4Title: "Billing & Documentation",
     expectStep4Desc: "All records are issued in English. Direct billing is coordinated with partner insurers.",
-    expectQuote: "Having an accredited hospital on Koh Lanta with English-speaking doctors gave us absolute peace of mind during our family trip.",
+    expectQuote: "Having an accredited clinic on Koh Lanta with English-speaking doctors gave us absolute peace of mind during our family trip.",
     expectQuoteAuthor: "— Anna, Sweden (Family of 4)",
     expectPill1: "No Appointment Required",
     expectPill2: "Same-Day Lab Results",
@@ -127,7 +127,7 @@ const translations = {
     pkgResortItem4: "Executive summary reporting",
 
     pkgActionInquire: "Inquire Now",
-    pkgActionContact: "Contact Hospital",
+    pkgActionContact: "Contact Clinic",
 
     // Checklist
     checkEyebrow: "Travel Safety",
@@ -208,7 +208,7 @@ const translations = {
     footLinksCareer: "Careers",
     footLinksContact: "Contact",
     footLinksPrivacy: "Privacy Policy",
-    footCopy: "© 2026 Thonburi Lanta Hospital. All rights reserved."
+    footCopy: "© 2026 Thonburi Lanta Clinic. All rights reserved."
   },
   th: {
     // Nav
@@ -226,17 +226,17 @@ const translations = {
     heroBadgeInsurance: "ประสานงานเคลมตรงประกันภัย",
     heroBadgeFamily: "มาตรฐานสถานพยาบาลระดับสากล AACI",
     heroEyebrow: "เครือธนบุรี เฮลท์แคร์ กรุ๊ป (THG)",
-    heroTitleHtml: "มาตรฐานการแพทย์โรงพยาบาล<br/>บนเกาะลันตา",
-    heroSub: "โรงพยาบาลขนาด 36 เตียงในเครือ THG พร้อมแผนกฉุกเฉิน 24 ชั่วโมง ศูนย์ตรวจเด็ก กุมารเวชกรรม และระบบประสานงานประกันภัยสุขภาพต่างประเทศชั้นนำเพื่อนักท่องเที่ยวและผู้พักอาศัย",
+    heroTitleHtml: "มาตรฐานบริการการแพทย์<br/>บนเกาะลันตา",
+    heroSub: "คลินิกการแพทย์ในเครือ THG พร้อมบริการติดต่อฉุกเฉิน 24 ชั่วโมง ศูนย์ตรวจเด็ก กุมารเวชกรรม และระบบประสานงานประกันภัยสุขภาพต่างประเทศชั้นนำเพื่อนักท่องเที่ยวและผู้พักอาศัย",
     heroErLabel: "แผนกฉุกเฉิน · ตลอด 24 ชั่วโมง",
     heroErPhone: "081-569-7890",
     heroErNote: "เข้ารับการรักษาได้ทันทีโดยไม่ต้องนัดหมายล่วงหน้า",
     heroBtnPackages: "แพ็กเกจการรักษา",
     heroBtnDoctors: "ทีมแพทย์ของเรา",
-    heroStatBeds: "เตียงผู้ป่วยใน",
-    heroStatEr: "บริการดูแลฉุกเฉิน",
+    heroStatBeds: "บริการผู้ป่วยนอก (OPD)",
+    heroStatEr: "ติดต่อฉุกเฉิน 24 ชม.",
     heroStatLang: "แพทย์สื่อสารภาษาอังกฤษ",
-    heroStatGroup: "เครือโรงพยาบาล THG",
+    heroStatGroup: "เครือข่ายสุขภาพ THG",
 
     // Trust Band
     tbEnglish: "แพทย์สื่อสารภาษาอังกฤษ",
@@ -265,10 +265,10 @@ const translations = {
     expectStep2Title: "ตรวจวินิจฉัยโดยทีมแพทย์",
     expectStep2Desc: "ทีมแพทย์สื่อสารภาษาอังกฤษได้อย่างเข้าใจชัดเจน พร้อมอธิบายสาเหตุ แผนการรักษา และขั้นตอนอย่างละเอียด",
     expectStep3Title: "ตรวจรักษาและรับยา",
-    expectStep3Desc: "บริการตรวจโรคครบครันในที่เดียวด้วยห้องปฏิบัติการวิเคราะห์โรค เอกซเรย์ดิจิทัล และห้องยามาตรฐานโรงพยาบาล",
+    expectStep3Desc: "บริการตรวจโรคครบครันในที่เดียวด้วยห้องปฏิบัติการวิเคราะห์โรค เอกซเรย์ดิจิทัล และห้องยามาตรฐานสากล",
     expectStep4Title: "ประสานงานประกันและสรุปค่าใช้จ่าย",
     expectStep4Desc: "จัดทำเอกสารและใบรับรองแพทย์อย่างครบถ้วนเพื่ออำนวยความสะดวกในการเบิกจ่ายหรือเคลมตรงประกันภัย",
-    expectQuote: "การมีโรงพยาบาลมาตรฐานระดับสากลบนเกาะลันตา ทำให้ครอบครัวของเรารู้สึกปลอดภัยและท่องเที่ยวได้อย่างอุ่นใจอย่างแท้จริง",
+    expectQuote: "การมีคลินิกมาตรฐานระดับสากลบนเกาะลันตา ทำให้ครอบครัวของเรารู้สึกปลอดภัยและท่องเที่ยวได้อย่างอุ่นใจอย่างแท้จริง",
     expectQuoteAuthor: "— แอนนา, ครอบครัวนักท่องเที่ยวจากสวีเดน",
     expectPill1: "ไม่ต้องจองคิวก่อนเข้ารับบริการ",
     expectPill2: "ทราบผลตรวจแล็บภายในวัน",
@@ -393,7 +393,7 @@ const translations = {
 
     inqRightEyebrow: "ช่องทางการติดต่อ",
     inqRightTitleHtml: "เราพร้อมดูแลคุณ<br/>ในทุกช่วงเวลา<br/>ที่คุณต้องการ",
-    inqRightSub: "ไม่ว่าคุณจะมีคำปรึกษาล่วงหน้าก่อนเดินทาง หรือต้องการการรักษาเร่งด่วนในขณะนี้ ทีมงานโรงพยาบาลธนบุรีลันตาพร้อมช่วยเหลือเสมอ",
+    inqRightSub: "ไม่ว่าคุณจะมีคำปรึกษาล่วงหน้าก่อนเดินทาง หรือต้องการการรักษาเร่งด่วนในขณะนี้ ทีมงานคลินิกธนบุรีลันตาพร้อมช่วยเหลือเสมอ",
 
     // Reviews
     revTitle: "ความคิดเห็นจากผู้รับบริการจริงบน Google",
@@ -401,12 +401,12 @@ const translations = {
     revWriteBtn: "เขียนรีวิวบน Google",
 
     // Footer
-    footBrandDesc: "โรงพยาบาลในเครือธนบุรี เฮลท์แคร์ กรุ๊ป (THG) มุ่งมั่นที่จะมอบมาตรฐานการดูแลรักษาระดับสากลให้กับผู้อยู่อาศัยในเกาะลันตาและนักท่องเที่ยวทั่วโลก",
+    footBrandDesc: "คลินิกในเครือธนบุรี เฮลท์แคร์ กรุ๊ป (THG) มุ่งมั่นที่จะมอบมาตรฐานการดูแลรักษาระดับสากลให้กับผู้อยู่อาศัยในเกาะลันตาและนักท่องเที่ยวทั่วโลก",
     footLinksDoc: "รายชื่อแพทย์ผู้รักษา",
     footLinksCareer: "สมัครงาน / ร่วมงานกับเรา",
-    footLinksContact: "ติดต่อโรงพยาบาล",
+    footLinksContact: "ติดต่อคลินิก",
     footLinksPrivacy: "นโยบายความเป็นส่วนตัว",
-    footCopy: "© 2026 โรงพยาบาลธนบุรีลันตา สงวนลิขสิทธิ์."
+    footCopy: "© 2026 คลินิกธนบุรีลันตา สงวนลิขสิทธิ์."
   }
 };
 

@@ -12,54 +12,54 @@ export default function FAQPage() {
   const faqData = {
     en: [
       {
-        q: "Is there a hospital on Koh Lanta?",
-        a: "Yes, Thonburi Lanta Hospital is Koh Lanta's first full-service 36-bed hospital. It is open 24 hours a day and is located in the Saladan area, Koh Lanta, Krabi.",
+        q: "Is there a medical clinic on Koh Lanta?",
+        a: "Yes, Thonburi Lanta Clinic is Koh Lanta's premium medical clinic. It is open 24 hours a day for emergency contact and is located in the Saladan area, Koh Lanta, Krabi.",
       },
       {
         q: "What should I do if I get injured while diving in Koh Lanta?",
-        a: "Go directly to Thonburi Lanta Hospital. We have dive medicine specialists available to consult on decompression sickness (DCS), pressure injuries, and marine wildlife stings, plus first-aid oxygen support.",
+        a: "Go directly to Thonburi Lanta Clinic. We have dive medicine specialists available to consult on decompression sickness (DCS), pressure injuries, and marine wildlife stings, plus first-aid oxygen support.",
       },
       {
         q: "Does Koh Lanta have emergency care?",
-        a: "Yes, Thonburi Lanta Hospital features a fully equipped Emergency Room (ER) open 24/7, staffed by trauma-trained clinicians and emergency responders. Walk-ins are welcome; no appointment is necessary for ER.",
+        a: "Yes, Thonburi Lanta Clinic features a fully equipped Emergency Room (ER) open 24/7 for urgent clinical care and ambulance support. Walk-ins are welcome; no appointment is necessary for ER.",
       },
       {
-        q: "Can I use international health insurance at Thonburi Lanta Hospital?",
+        q: "Can I use international health insurance at Thonburi Lanta Clinic?",
         a: "Yes, we accept major international travel and health insurance (such as Allianz, AXA, Europ Assistance, and DAN). We provide English medical certificates, itemized bills, and direct-billing support (GOP processing).",
       },
       {
         q: "Is there an English-speaking doctor in Koh Lanta?",
-        a: "Yes, all medical doctors, specialists, and nurses at Thonburi Lanta Hospital are fluent in English. We regularly treat expats, international tourists, and resort guests.",
+        a: "Yes, all medical doctors, specialists, and nurses at Thonburi Lanta Clinic are fluent in English. We regularly treat expats, international tourists, and resort guests.",
       },
       {
-        q: "What is the nearest hospital to Koh Lanta?",
-        a: "Thonburi Lanta Hospital is located directly on Koh Lanta island (Krabi). You no longer need to travel to Krabi Town or Trang for standard inpatient admission or 24/7 emergency trauma care.",
+        q: "What is the nearest clinic to Koh Lanta?",
+        a: "Thonburi Lanta Clinic is located directly on Koh Lanta island (Krabi). You no longer need to travel to Krabi Town or Trang for outpatient clinical services or 24/7 emergency response.",
       },
     ],
     th: [
       {
-        q: "โรงพยาบาลในเกาะลันตามีไหม?",
-        a: "มีครับ โรงพยาบาลธนบุรีลันตา เป็นโรงพยาบาลขนาด 36 เตียงแห่งแรกบนเกาะลันตา เปิดให้บริการรักษาพยาบาลตลอด 24 ชั่วโมง ตั้งอยู่ในย่านศาลาด่าน อำเภอเกาะลันตา จังหวัดกระบี่",
+        q: "คลินิกการแพทย์ในเกาะลันตามีไหม?",
+        a: "มีครับ คลินิกธนบุรีลันตา เป็นคลินิกการแพทย์ครบวงจรแห่งแรกบนเกาะลันตา เปิดให้บริการตลอด 24 ชั่วโมงสำหรับการประสานงานฉุกเฉิน ตั้งอยู่ในย่านศาลาด่าน อำเภอเกาะลันตา จังหวัดกระบี่",
       },
       {
         q: "หากได้รับบาดเจ็บจากการดำน้ำที่เกาะลันตา ควรทำอย่างไร?",
-        a: "เดินทางมาที่ห้องฉุกเฉินโรงพยาบาลธนบุรีลันตาได้ทันที เรามีแพทย์ผู้เชี่ยวชาญด้านเวชศาสตร์ใต้น้ำ (Dive Medicine) พร้อมให้คำปรึกษาดูแลรักษาภาวะโรคน้ำหนีบ (Decompression Sickness - DCS) และอุบัติเหตุจากการดำน้ำทุกประเภท",
+        a: "เดินทางมาที่คลินิกธนบุรีลันตาได้ทันที เรามีแพทย์ผู้เชี่ยวชาญด้านเวชศาสตร์ใต้น้ำ (Dive Medicine) พร้อมให้คำปรึกษาดูแลรักษาภาวะโรคน้ำหนีบ (Decompression Sickness - DCS) และอุบัติเหตุจากการดำน้ำทุกประเภท",
       },
       {
         q: "เกาะลันตามีห้องฉุกเฉินหรือบริการผู้ป่วยอุบัติเหตุไหม?",
-        a: "มีครับ โรงพยาบาลธนบุรีลันตาเปิดให้บริการแผนกฉุกเฉินและอุบัติเหตุ (ER) ตลอด 24 ชั่วโมง ทุกวัน พร้อมรถพยาบาลฉุกเฉินรับส่งผู้ป่วยกรณีเร่งด่วน โดยไม่ต้องนัดหมายล่วงหน้า",
+        a: "มีครับ คลินิกธนบุรีลันตาเปิดให้บริการแผนกฉุกเฉินและอุบัติเหตุ (ER) ตลอด 24 ชั่วโมง ทุกวัน พร้อมรถพยาบาลฉุกเฉินรับส่งผู้ป่วยกรณีเร่งด่วน โดยไม่ต้องนัดหมายล่วงหน้า",
       },
       {
-        q: "สามารถใช้ประกันสุขภาพต่างประเทศที่โรงพยาบาลธนบุรีลันตาได้หรือไม่?",
+        q: "สามารถใช้ประกันสุขภาพต่างประเทศที่คลินิกธนบุรีลันตาได้หรือไม่?",
         a: "ได้ครับ เรายินดีรับประกันภัยการเดินทางและประกันสุขภาพต่างประเทศชั้นนำเกือบทุกบริษัท โดยมีทีมงานช่วยประสานงานเคลมตรง (Direct Billing) ออกใบรับรองแพทย์และเอกสารสรุปประวัติเป็นภาษาอังกฤษเพื่อความสะดวกในการเคลมเคลียร์ค่าใช้จ่าย",
       },
       {
         q: "มีหมอที่สื่อสารภาษาอังกฤษบนเกาะลันตาไหม?",
-        a: "มีครับ แพทย์และพยาบาลวิชาชีพของโรงพยาบาลธนบุรีลันตาสามารถสื่อสารภาษาอังกฤษได้อย่างคล่องแคล่ว พร้อมให้การดูแลนักท่องเที่ยวชาวต่างชาติและ Expat ที่พำนักระยะยาวบนเกาะอย่างเข้าใจละเอียด",
+        a: "มีครับ แพทย์และพยาบาลวิชาชีพของคลินิกธนบุรีลันตาสามารถสื่อสารภาษาอังกฤษได้อย่างคล่องแคล่ว พร้อมให้การดูแลนักท่องเที่ยวชาวต่างชาติและ Expat ที่พำนักระยะยาวบนเกาะอย่างเข้าใจละเอียด",
       },
       {
-        q: "โรงพยาบาลที่ใกล้ที่สุดบนเกาะลันตาคือที่ไหน?",
-        a: "โรงพยาบาลธนบุรีลันตา ตั้งอยู่บนเกาะลันตาโดยตรง ช่วยให้ผู้ป่วยไม่ต้องเดินทางข้ามเรือไปรักษาตัวที่ตัวเมืองกระบี่หรือตรังสำหรับอาการป่วยไข้ทั่วไปและการแอดมิทเป็นผู้ป่วยใน (IPD)",
+        q: "คลินิกที่ใกล้ที่สุดบนเกาะลันตาคือที่ไหน?",
+        a: "คลินิกธนบุรีลันตา ตั้งอยู่บนเกาะลันตาโดยตรง ช่วยให้ผู้ป่วยไม่ต้องเดินทางข้ามเรือไปรักษาตัวที่ตัวเมืองกระบี่หรือตรังสำหรับอาการป่วยไข้ทั่วไปและการตรวจรักษาผู้ป่วยนอก",
       },
     ],
   };
@@ -107,8 +107,8 @@ export default function FAQPage() {
             </h1>
             <p className="text-[14px] text-mid max-w-lg mx-auto leading-relaxed">
               {language === "en"
-                ? "Find fast answers about hospital capacities, dive safety, insurance claims, and emergency responses on Koh Lanta."
-                : "ค้นหาข้อมูลบริการโรงพยาบาล การดูแลฉุกเฉิน ประกันภัยสุขภาพ และขั้นตอนตรวจประเมินดำน้ำ"}
+                ? "Find fast answers about clinic details, dive safety, insurance claims, and emergency responses on Koh Lanta."
+                : "ค้นหาข้อมูลบริการคลินิก การดูแลฉุกเฉิน ประกันภัยสุขภาพ และขั้นตอนตรวจประเมินดำน้ำ"}
             </p>
           </div>
 

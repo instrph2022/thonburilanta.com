@@ -33,14 +33,12 @@ const lora = Lora({
 });
 
 export const metadata: Metadata = {
-  title: "Thonburi Lanta Hospital — Healthcare on Koh Lanta",
-  description: "A full-service 36-bed hospital on Koh Lanta with 24/7 emergency room, English-speaking doctors, and international health insurance direct billing.",
+  title: "Thonburi Lanta Clinic — Healthcare on Koh Lanta",
+  description: "A premium medical clinic on Koh Lanta with 24/7 emergency response contact, English-speaking doctors, and international health insurance direct billing.",
   keywords: [
-    "hospital in koh lanta",
-    "clinic koh lanta",
+    "clinic in koh lanta",
     "doctor koh lanta",
     "emergency koh lanta",
-    "โรงพยาบาลเกาะลันตา",
     "คลินิกเกาะลันตา",
     "หมอเกาะลันตา"
   ],

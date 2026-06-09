@@ -76,9 +76,9 @@ export default function Home() {
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Hospital",
-    "name": "Thonburi Lanta Hospital",
-    "alternateName": "โรงพยาบาลธนบุรีลันตา",
+    "@type": "MedicalClinic",
+    "name": "Thonburi Lanta Clinic",
+    "alternateName": "คลินิกธนบุรีลันตา",
     "url": "https://thonburilanta.com",
     "telephone": "+66-81-569-7890",
     "address": {
@@ -95,7 +95,6 @@ export default function Home() {
       { "@type": "MedicalTherapy", "name": "Dive Medicine" },
       { "@type": "MedicalTherapy", "name": "Health Check" }
     ],
-    "numberOfBeds": 36,
     "medicalSpecialty": ["Emergency Medicine", "General Practice", "Dive Medicine"]
   };
 
@@ -176,7 +175,7 @@ export default function Home() {
           {/* Stats strip */}
           <div className="flex flex-wrap border border-border-med rounded-xl overflow-hidden bg-white max-w-xl shadow-sm">
             <div className="flex-1 min-w-[120px] p-4 border-r border-b border-border">
-              <span className="font-serif text-2xl font-bold text-dark block leading-none">36</span>
+              <span className="font-serif text-2xl font-bold text-dark block leading-none">OPD</span>
               <span className="text-[10px] text-muted block mt-1.5">{t("heroStatBeds")}</span>
             </div>
             <div className="flex-1 min-w-[120px] p-4 border-r border-b border-border">
