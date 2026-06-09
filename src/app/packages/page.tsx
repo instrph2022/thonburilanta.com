@@ -114,17 +114,15 @@ export default function PackagesPage() {
                 {pkg.imageUrl && (
                   <div 
                     onClick={() => setActiveImage(pkg.imageUrl)}
-                    className="w-[calc(100%+3.5rem)] -mt-7 -mx-7 mb-5 overflow-hidden relative rounded-t-2xl cursor-zoom-in group aspect-[16/10] bg-black/5"
+                    className="cursor-zoom-in relative group"
                   >
                     <img 
                       src={pkg.imageUrl} 
                       alt={pkg.title} 
-                      className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105" 
+                      className="w-[calc(100%+3.5rem)] h-40 object-cover -mt-7 -mx-7 mb-5 transition-transform duration-500 hover:scale-105" 
                     />
-                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                      <span className="bg-white/90 text-dark px-3 py-1.5 rounded-full text-[11px] font-bold shadow-md">
-                        {language === "en" ? "🔍 Zoom Image" : "🔍 ขยายรูปภาพ"}
-                      </span>
+                    <div className="absolute top-2 right-2 bg-black/50 text-white px-2.5 py-1 rounded-full text-[9px] font-bold shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+                      {language === "en" ? "🔍 Zoom" : "🔍 ขยายภาพ"}
                     </div>
                   </div>
                 )}

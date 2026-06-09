@@ -724,17 +724,15 @@ export default function Home() {
             <div className="bg-teal-brand border border-teal-brand rounded-2xl p-6.5 text-white flex flex-col hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300 overflow-hidden">
               <div 
                 onClick={() => setActiveImage("/pkg-std-testing.webp")}
-                className="w-[calc(100%+3.25rem)] -mt-6.5 -mx-6.5 mb-5 overflow-hidden relative rounded-t-2xl cursor-zoom-in group aspect-[16/10] bg-black/5"
+                className="cursor-zoom-in relative group"
               >
                 <img 
                   src="/pkg-std-testing.webp" 
                   alt="Confidential STD/STI Testing" 
-                  className="w-full h-full object-cover object-center opacity-95 transition-transform duration-500 group-hover:scale-105" 
+                  className="w-[calc(100%+3.25rem)] h-36 object-cover -mt-6.5 -mx-6.5 mb-5 opacity-95 hover:scale-105 transition-transform duration-500" 
                 />
-                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <span className="bg-white/90 text-dark px-3 py-1 rounded-full text-[10px] font-bold shadow-md">
-                    {language === "en" ? "🔍 Zoom" : "🔍 ขยายภาพ"}
-                  </span>
+                <div className="absolute top-2 right-2 bg-black/50 text-white px-2.5 py-1 rounded-full text-[9px] font-bold shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+                  {language === "en" ? "🔍 Zoom" : "🔍 ขยายภาพ"}
                 </div>
               </div>
               <span className="text-[9.5px] bg-white/20 text-white font-bold uppercase tracking-wider px-2 py-1 rounded-full w-fit mb-4">
@@ -767,17 +765,15 @@ export default function Home() {
             <div className="bg-white border border-border rounded-2xl p-6.5 flex flex-col hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300 overflow-hidden">
               <div 
                 onClick={() => setActiveImage("/pkg-dengue-vaccine.webp")}
-                className="w-[calc(100%+3.25rem)] -mt-6.5 -mx-6.5 mb-5 overflow-hidden relative rounded-t-2xl cursor-zoom-in group aspect-[16/10] bg-black/5"
+                className="cursor-zoom-in relative group"
               >
                 <img 
                   src="/pkg-dengue-vaccine.webp" 
                   alt="Dengue Fever Vaccines" 
-                  className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105" 
+                  className="w-[calc(100%+3.25rem)] h-36 object-cover -mt-6.5 -mx-6.5 mb-5 hover:scale-105 transition-transform duration-500" 
                 />
-                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <span className="bg-white/90 text-dark px-3 py-1 rounded-full text-[10px] font-bold shadow-md">
-                    {language === "en" ? "🔍 Zoom" : "🔍 ขยายภาพ"}
-                  </span>
+                <div className="absolute top-2 right-2 bg-black/50 text-white px-2.5 py-1 rounded-full text-[9px] font-bold shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+                  {language === "en" ? "🔍 Zoom" : "🔍 ขยายภาพ"}
                 </div>
               </div>
               <span className="text-[9.5px] bg-teal-light text-teal-dark font-bold uppercase tracking-wider px-2 py-1 rounded-full w-fit mb-4">
@@ -810,17 +806,15 @@ export default function Home() {
             <div className="bg-white border border-border rounded-2xl p-6.5 flex flex-col hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300 overflow-hidden">
               <div 
                 onClick={() => setActiveImage("/pkg-annual-vitality.webp")}
-                className="w-[calc(100%+3.25rem)] -mt-6.5 -mx-6.5 mb-5 overflow-hidden relative rounded-t-2xl cursor-zoom-in group aspect-[16/10] bg-black/5"
+                className="cursor-zoom-in relative group"
               >
                 <img 
                   src="/pkg-annual-vitality.webp" 
                   alt="Annual Vitality Checkup" 
-                  className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105" 
+                  className="w-[calc(100%+3.25rem)] h-36 object-cover -mt-6.5 -mx-6.5 mb-5 hover:scale-105 transition-transform duration-500" 
                 />
-                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <span className="bg-white/90 text-dark px-3 py-1 rounded-full text-[10px] font-bold shadow-md">
-                    {language === "en" ? "🔍 Zoom" : "🔍 ขยายภาพ"}
-                  </span>
+                <div className="absolute top-2 right-2 bg-black/50 text-white px-2.5 py-1 rounded-full text-[9px] font-bold shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+                  {language === "en" ? "🔍 Zoom" : "🔍 ขยายภาพ"}
                 </div>
               </div>
               <span className="text-[9.5px] bg-amber-light text-amber font-bold uppercase tracking-wider px-2 py-1 rounded-full w-fit mb-4">
