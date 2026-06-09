@@ -388,7 +388,7 @@ export default function AdminDashboardPage() {
           </div>
           <div>
             <h1 className="font-serif text-lg font-semibold text-dark leading-none">
-              Thonburi Lanta Hospital
+              Thonburi Lanta Clinic
             </h1>
             <span className="text-[10.5px] text-muted tracking-wide mt-1 block">
               Inquiry Admin Console

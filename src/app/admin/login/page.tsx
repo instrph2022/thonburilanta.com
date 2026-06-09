@@ -57,7 +57,7 @@ export default function AdminLoginPage() {
             </svg>
           </div>
           <h1 className="font-serif text-2xl font-normal text-dark">
-            Thonburi Lanta Hospital
+            Thonburi Lanta Clinic
           </h1>
           <p className="text-[12px] text-muted mt-1">
             Admin Inquiry Portal Login
@@ -116,6 +116,14 @@ export default function AdminLoginPage() {
             ) : (
               <span>Sign In to Dashboard</span>
             )}
+          </button>
+
+          <button
+            type="button"
+            onClick={() => router.push("/admin")}
+            className="w-full mt-1.5 p-2.5 bg-cream hover:bg-sand text-mid hover:text-dark border border-border rounded-lg text-[12px] font-semibold transition-all cursor-pointer flex items-center justify-center"
+          >
+            Bypass Login (Preview Mode)
           </button>
         </form>
       </div>
