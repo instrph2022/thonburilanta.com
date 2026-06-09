@@ -23,32 +23,11 @@ const INSURANCES = [
 
 const REVIEWS = [
   {
-    name: "ณัฐชล สุวรรณวร",
+    name: "Laura Moggs",
     rating: 5,
-    date: "3 เดือนที่แล้ว",
-    text: "น่ารัก บริการดี ตั้งแต่วันแรกที่เกิดอุบัติเหตุ รักษาต่อเนื่องเพราะเป็นกันเองสุดๆค่ะ พี่ๆห้องทำแผลน่ารักมากค่ะ หมอหล่อค่ะ 😆",
-    avatar: "ณ"
-  },
-  {
-    name: "มาริอ้อนคลินิก ศัลยกรรม",
-    rating: 5,
-    date: "8 เดือนที่แล้ว",
-    text: "ขอบพระคุณเจ้าหน้าที่ พยาบาลวอร์ด 37 ที่บริการ และให้การดูแลเป็นอย่างดี ไม่มีขาดตกบกพร่อง คะแนนบริการเต็ม 100 คะแนนไม่หัก จากคนไข้ ห้อง 3707 ใช้บริการวันที่ 26 ออกโรงพยาบาล 29 เป็นกำลังใจให้เจ้าหน้าที่และพยาบาลวอร์ด 37 ทุก...",
-    avatar: "ม"
-  },
-  {
-    name: "Navarat Phonlakarn",
-    rating: 5,
-    date: "7 เดือนที่แล้ว",
-    text: "ที่นี่บริการดีมากค่ะ คุณหมอพี่พยาบาลทุกคนดูแลเอาใจใส่เป็นอย่างดี น้องนนทีขอบคุณครับที่ดูแลอย่างดีทุกครั้งที่มา ผมมาแอดมิทตั้งแต่3เดือนผมก็โตที่โรงพยาบาลเลยครับเพราะป่วยแอดมิททุกเดือนจนตอนนี้จะ3ขวบแล้ว😆😆",
-    avatar: "N"
-  },
-  {
-    name: "Parichat Duangpakdee",
-    rating: 5,
-    date: "7 เดือนที่แล้ว",
-    text: "ทางโรงเรียนขอขอบพระคุณทีมวิทยากรจากโรงพยาบาลธนบุรีตรัง ที่ให้เกียรติมาจัดอบรมการปฐมพยาบาลเบื้องต้นแก่คณะครูและเจ้าหน้าที่ของโรงเรียน ความรู้ที่ได้รับประโยชน์อย่างยิ่งต่อการปฏิบัติงาน",
-    avatar: "P"
+    date: "2025-02-25",
+    text: "Probably the best health care experience of my life. Seen very quickly and given exceptional care. The clinic manager Joah was on hand at all times and sat with me whilst my medication was being prepared as I was alone. Couldn’t fault my experience. The loveliest people work here!",
+    avatar: "L"
   },
   {
     name: "Vanessa Fernandes",
@@ -58,11 +37,18 @@ const REVIEWS = [
     avatar: "V"
   },
   {
-    name: "Laura Moggs",
+    name: "Madeleine Davis",
     rating: 5,
-    date: "2025-02-25",
-    text: "Probably the best health care experience of my life. Seen very quickly and given exceptional care. The clinic manager Joah was on hand at all times and sat with me whilst my medication was being prepared as I was alone. Couldn’t fault my experience. The loveliest people work here!",
-    avatar: "L"
+    date: "2025-05-06",
+    text: "Really lovely and welcoming team. I was seen and given treatment incredibly quickly and efficiently. Thank you for making what could be quite a daunting experience very positive!",
+    avatar: "M"
+  },
+  {
+    name: "Rob A.",
+    rating: 5,
+    date: "2025-04-16",
+    text: "Excellent service provided. Good communication and very helpful and friendly staff. Needed wound cleaning and dressing daily and they sorted this liaising with my travel insurer.",
+    avatar: "R"
   },
   {
     name: "Sunesh Smith",
@@ -70,6 +56,13 @@ const REVIEWS = [
     date: "2025-04-02",
     text: "I suffered very bad food poisoning and spent an evening in the clinic. I was very well looked after by the staff and seen to by the doctor quickly. They even helped contact my insurance to settle the bill on the night. Highly recommend!",
     avatar: "S"
+  },
+  {
+    name: "Amelia Kirby",
+    rating: 5,
+    date: "2025-04-02",
+    text: "Kind attentive staff, little to no wait. Clean and professional facility. I was treated as soon as I arrived and they even drove me back to my hotel. They delivered medicine to my hotel later that day. Highly recommend.",
+    avatar: "A"
   }
 ];
 
@@ -982,13 +975,13 @@ export default function Home() {
               <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
             </svg>
             <div className="flex items-center gap-1.5">
-              <span className="font-extrabold text-gray-900 text-lg leading-none">4.6</span>
+              <span className="font-extrabold text-gray-900 text-lg leading-none">5.0</span>
               <div className="flex gap-0.5">
                 {[1, 2, 3, 4, 5].map(i => (
                   <span key={i} className="text-amber text-lg leading-none">★</span>
                 ))}
               </div>
-              <span className="text-gray-400 text-sm">(377)</span>
+              <span className="text-gray-400 text-sm">(60+)</span>
             </div>
           </div>
         </div>
