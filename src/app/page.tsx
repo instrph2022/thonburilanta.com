@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 import InquiryForm from "@/components/InquiryForm";
@@ -66,9 +66,58 @@ const REVIEWS = [
   }
 ];
 
+interface ReviewItem {
+  name: string;
+  rating: number;
+  date: string;
+  text: string;
+  avatar: string;
+  profile_photo_url?: string;
+}
+
 export default function Home() {
   const { language, t } = useLanguage();
   const [searchQuery, setSearchQuery] = useState("");
+  const [googleReviews, setGoogleReviews] = useState<ReviewItem[]>(REVIEWS);
+  const [googleRating, setGoogleRating] = useState("5.0");
+  const [googleTotalReviews, setGoogleTotalReviews] = useState("60+");
+
+  useEffect(() => {
+    async function getReviews() {
+      const apiKey = process.env.NEXT_PUBLIC_GOOGLE_PLACES_API_KEY;
+      const placeId = process.env.NEXT_PUBLIC_GOOGLE_PLACE_ID || "ChIJTX2VL3jBUTARtzm-qlggWDg";
+
+      if (!apiKey) return;
+
+      try {
+        const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=name,rating,user_ratings_total,reviews&key=${apiKey}&language=${language}`;
+        const res = await fetch(url);
+        const result = await res.json();
+        if (result.status === "OK" && result.result?.reviews) {
+          const mapped = result.result.reviews.map((rev: {
+            author_name: string;
+            rating: number;
+            text: string;
+            profile_photo_url?: string;
+            relative_time_description?: string;
+          }) => ({
+            name: rev.author_name,
+            rating: rev.rating,
+            date: rev.relative_time_description || "recently",
+            text: rev.text,
+            avatar: rev.author_name.charAt(0),
+            profile_photo_url: rev.profile_photo_url,
+          }));
+          setGoogleReviews(mapped);
+          setGoogleRating(result.result.rating.toFixed(1));
+          setGoogleTotalReviews(result.result.user_ratings_total.toString());
+        }
+      } catch (error) {
+        console.error("Failed to fetch Google reviews directly:", error);
+      }
+    }
+    getReviews();
+  }, [language]);
 
   const filteredInsurances = searchQuery.trim() === ""
     ? ["Allianz", "AXA", "Europ Assistance", "DAN", "Bupa", "Cigna", "Generali", "Folksam"]
@@ -194,7 +243,7 @@ export default function Home() {
               <span>{t("heroBadgeInsurance")}</span>
             </div>
             <div className="flex items-center gap-1.5 bg-white border border-border-med px-3 py-1.5 rounded-full text-[11.5px] text-mid font-medium shadow-sm">
-              <span>👨👩👧</span>
+              <Award className="w-3.5 h-3.5 text-teal-brand" />
               <span>{t("heroBadgeFamily")}</span>
             </div>
           </div>
@@ -975,13 +1024,13 @@ export default function Home() {
               <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
             </svg>
             <div className="flex items-center gap-1.5">
-              <span className="font-extrabold text-gray-900 text-lg leading-none">5.0</span>
+              <span className="font-extrabold text-gray-900 text-lg leading-none">{googleRating}</span>
               <div className="flex gap-0.5">
                 {[1, 2, 3, 4, 5].map(i => (
-                  <span key={i} className="text-amber text-lg leading-none">★</span>
+                  <span key={i} className={`text-amber text-lg leading-none ${i <= Math.round(parseFloat(googleRating)) ? 'opacity-100' : 'opacity-20'}`}>★</span>
                 ))}
               </div>
-              <span className="text-gray-400 text-sm">(60+)</span>
+              <span className="text-gray-400 text-sm">({googleTotalReviews})</span>
             </div>
           </div>
         </div>
@@ -992,7 +1041,7 @@ export default function Home() {
           <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-warm-white via-warm-white/40 to-transparent z-10 pointer-events-none" />
           
           <div className="flex w-max animate-marquee hover:[animation-play-state:paused] gap-6 py-4">
-            {[...REVIEWS, ...REVIEWS, ...REVIEWS].map((rev, index) => (
+            {[...googleReviews, ...googleReviews, ...googleReviews].map((rev, index) => (
               <div
                 key={`${rev.name}-${index}`}
                 className="w-[340px] md:w-[380px] flex-shrink-0 bg-white rounded-2xl p-6 border border-border flex flex-col justify-between hover:scale-[1.01] transition-all duration-300 shadow-sm hover:shadow-md"
@@ -1000,8 +1049,12 @@ export default function Home() {
                 <div>
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex items-center gap-3">
-                      <div className="w-11 h-11 rounded-full overflow-hidden bg-teal-brand/10 text-teal-brand flex items-center justify-center font-bold text-[15px] border border-border">
-                        {rev.avatar}
+                      <div className="w-11 h-11 rounded-full overflow-hidden bg-teal-brand/10 text-teal-brand flex items-center justify-center font-bold text-[15px] border border-border shrink-0">
+                        {rev.profile_photo_url ? (
+                          <img src={rev.profile_photo_url} alt={rev.name} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                        ) : (
+                          rev.avatar
+                        )}
                       </div>
                       <div>
                         <h4 className="text-[13.5px] font-bold text-dark leading-tight">{rev.name}</h4>
